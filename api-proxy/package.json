@@ -1,0 +1,21 @@
+{
+  "name": "data-brokers-api-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "alias:apis": "vercel alias data-brokers-api-proxy.vercel.app api.data-brokers.org",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "universal-fetch": "latest"
+  }
+}

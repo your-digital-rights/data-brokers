@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "headers": [ 
+    {
+      "source": "/api/databrokers",
+      "headers" : [
+        {
+          "key" : "Access-Control-Allow-Origin",
+          "value" : "*"
+        }
+      ]
+    }
+   ]   
+}
