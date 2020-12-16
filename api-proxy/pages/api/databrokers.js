@@ -50,6 +50,10 @@ setInterval(() => {
 }, 60 * 60 * 1000); 
 
 export default async (req, res) => {
+  if (query.flush == "02874523") {
+    console.log("Flushing the cache.");
+    data = fetchDataBrokers();
+  }
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')
   let response = await data;

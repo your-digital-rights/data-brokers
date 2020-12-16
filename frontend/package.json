@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "alias:prod": "npx vercel alias data-brokers-frontend.vercel.app data-brokers.org && vercel alias data-brokers-frontend.vercel.app www.data-brokers.org"
+    "alias:prod": "npx vercel alias data-brokers-frontend.vercel.app databrokerswatch.org && vercel alias data-brokers-frontend.vercel.app www.databrokerswatch.org"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
