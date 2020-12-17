@@ -1,4 +1,6 @@
 const fetch = require("universal-fetch");
+const url = require('url');
+
 const SHEET_ID = "1vcImZXpP5OCJ_M0Eyjqv8je1fOZxD8IULDOAd04z5Zw";
 const API_KEY = "AIzaSyACYZ4LvYEq0Wm9gmz_2bJyHAH6lv6yeb4";
 
@@ -50,6 +52,7 @@ setInterval(() => {
 }, 60 * 60 * 1000); 
 
 export default async (req, res) => {
+  const query = url.parse(req.url,true).query;
   if (query.flush == "02874523") {
     console.log("Flushing the cache.");
     data = fetchDataBrokers();
