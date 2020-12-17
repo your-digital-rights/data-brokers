@@ -1,4 +1,4 @@
-var DOMAIN = "databrokerswatch.org"
-var DOMAIN_URL = "https://databrokerswatch.org/"
-var API_DOMAIN = "api.databrokerswatch.org"
-var API_DOMAIN_URL = "https://api.databrokerswatch.org/"
+export const DOMAIN = "databrokerswatch.org";
+export const DOMAIN_URL = "https://databrokerswatch.org/";
+export const API_DOMAIN = "api.databrokerswatch.org";
+export const API_DOMAIN_URL = "https://api.databrokerswatch.org/";
