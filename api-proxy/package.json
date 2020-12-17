@@ -1,21 +1,21 @@
 {
   "name": "data-brokers-api-proxy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "license": "GPL3",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "alias:apis": "vercel alias data-brokers-api-proxy.vercel.app api.databrokerswatch.org",
+    "deploy": "vercel",
+    "deploy:prod": "npx vercel --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
   "dependencies": {
-    "next": "^9.3.4",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "next": "^9.5.5",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "universal-fetch": "latest"
   }
 }
