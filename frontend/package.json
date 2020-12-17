@@ -1,13 +1,14 @@
 {
   "name": "data-brokers-frontend",
   "version": "0.1.0",
+  "license": "GPL3",
   "private": true,
-  "main": "src/index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "alias:prod": "npx vercel alias data-brokers-frontend.vercel.app databrokerswatch.org && vercel alias data-brokers-frontend.vercel.app www.databrokerswatch.org"
+    "dev": "next",
+    "start": "next start ./src",
+    "build": "next build ./src",
+    "deploy": "npx vercel",
+    "deploy:prod": "npx vercel --prod"   
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

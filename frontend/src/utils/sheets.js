@@ -1,5 +1,5 @@
 import fetch from "universal-fetch";
-import API_DOMAIN_URL from "domains";
+import API_DOMAIN_URL from "domain";
 
 var data = null;
 
