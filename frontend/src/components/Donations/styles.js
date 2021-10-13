@@ -1,7 +1,7 @@
 import { container } from "../../styles/layout";
-import { themeBg } from "../../styles/theme";
+import { theme } from "../../styles/theme";
 
-export default (theme) => ({
+const Theme = (theme) => ({
   donate: {
     backgroundColor: "#f2f2f2",
   },
@@ -25,7 +25,7 @@ export default (theme) => ({
       backgroundRepeat: "no-repeat",
     },
   },
-  donateButton: {
+  donateBTCButton: {
     marginTop: "-25px",
     borderRadius: "24px 24px 24px 24px",
     color: "white",
@@ -33,6 +33,20 @@ export default (theme) => ({
     padding: "10px 20px",
     "&:hover": {
       background: "#04487B",
+    },
+  },
+  donateLPButton: {
+    marginTop: "-25px",
+    marginRight: "10px",
+    borderRadius: "24px 24px 24px 24px",
+    color: "white",
+    fontWeight: "600",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "#04487B",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: '35px',
     },
   },
   intro: {
@@ -46,7 +60,7 @@ export default (theme) => ({
   title: {
     marginBottom: 0,
   },
-  bitcoin: {
+  buttons: {
     textAlign: "center",
     marginBottom: "30px",
     [theme.breakpoints.up("sm")]: {
@@ -54,3 +68,5 @@ export default (theme) => ({
     },
   },
 });
+
+export default Theme;

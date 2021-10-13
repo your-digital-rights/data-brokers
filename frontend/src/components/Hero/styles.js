@@ -1,17 +1,17 @@
 import { container } from "../../styles/layout";
-import { themeBg } from "../../styles/theme";
+import { theme } from "../../styles/theme";
 
-export default theme => ({
+const Theme = (theme) => ({
   hero: {
     backgroundColor: theme.palette.primary.main,
-    ...themeBg,
+    ...theme,
     [theme.breakpoints.down("sm")]: {
       paddingTop: "50px"
     }
   },
   heading: {
     maxWidth: "850px !important",
-    margin: "auto auto 50px auto"
+    margin: "50px auto 50px auto"
   },
   container: {
     padding: "10px 30px 30px 30px",
@@ -52,3 +52,5 @@ export default theme => ({
     }
   }
 });
+
+export default Theme;

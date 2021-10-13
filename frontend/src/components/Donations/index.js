@@ -1,37 +1,55 @@
-import { IntroText, SubtitleText, DonateButtonText } from "./text";
-
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import styles from "./styles";
-import { visuallyHidden } from "../../styles/layout";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import tracking from "../../utils/tracking";
+import { FormattedMessage } from "react-intl";
 
-const Donations = ({ classes, onCompanySelected, children }) => {
+
+const Donations = ({ classes, children }) => {
+
+  const trackDonate = (type) => {
+    tracking.trackDonate(type, "Donation Component");
+  };
+
   return (
     <div className={classes.donate}>
       <div className={classes.container}>
         <div id="donations" className={classes.heading}>
           <Typography
-            variant="display1"
+            variant="h4"
             component="h2"
             className={classes.title}
             gutterBottom={true}
           >
-            {SubtitleText}
+            <FormattedMessage id="donations.headingDonate" defaultMessage="We need your support" />
           </Typography>
           <Typography color="inherit" className={classes.intro}>
-            {IntroText}
-          </Typography>
-          <div className={classes.bitcoin}>
+            <FormattedMessage
+              id="donations.donateIntro"
+              defaultMessage="YourDigitalRights.org was created because we believe that privacy matters, and that exercising your right to privacy should be easy. That’s why we’ve made it free. Donations allow us to spend more time improving this service."
+            />
+          </Typography>          
+          <div className={classes.buttons}>
             <Button
-              variant="raised"
+              variant="contained"
+              href="https://liberapay.com/YourDigitalRights.org/donate"
+              color="primary"
+              type="submit"
+              className={classes.donateLPButton}
+              onClick={() => trackDonate("Donation - Librapay")}
+            >
+              <FormattedMessage id="donations.Liberapay" defaultMessage="Donate via Liberapay" />
+            </Button>                          
+            <Button
+              variant="contained"
               href="bitcoin:34kHDRPhrBmP15BZBYvx4gn5amwCwa6kGe"
               color="primary"
               type="submit"
-              className={classes.donateButton}
+              className={classes.donateBTCButton}
+              onClick={() => trackDonate("Donation - BTC")}
             >
-              {DonateButtonText}
+              <FormattedMessage id="donations.Bitcoin" defaultMessage="Donate Bitcoin" />
             </Button>
           </div>
           {children}

@@ -4,196 +4,18 @@ import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import tracking from "../../utils/tracking";
 import classNames from "classnames";
+import styles from "./styles";
+import { searchOrganizationsUrlAnchor } from "../../utils/urlAnchors";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import { ALT_LANGUAGES } from '../../utils/langUtils';
+import { withRouter } from 'next/router'
+import Link from 'next/link'
+import cookieCutter from 'cookie-cutter'
 
 
-const styles = theme => ({
-  nav: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "0 60px",
-    backgroundColor: "#005ea5",
-    borderBottom: "4px solid #0a74be",
-    height: "72px",
-    width: "100%",
-    zIndex: "11000",
-    [theme.breakpoints.down("xs")]: {
-      padding: "0 15px"
-    },
-    position: "fixed",
-    top: "0"
-  },
-  logoLink: {
-    display: "flex",
-    justifyContent: "center"
-  },
-  logo: {
-    width: "90px",
-    outlineColor: "#e8f4f8",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "80px"
-    }
-  },
-  container: {
-    listStyle: "none",
-    display: "flex",
-    [theme.breakpoints.down("sm")]: {
-      display: "none"
-    }
-  },
-  item: {
-    padding: "10px 0",
-    marginRight: "24px",
-    outlineColor: "#e8f4f8"
-  },
-  link: {
-    color: "#f6f7fa",
-    fontWeight: "bolder",
-    fontSize: "15px",
-    textDecoration: "none",
-    outlineColor: "#e8f4f8"
-  },
-  subsectionLink: {
-    color: "#bebebe",
-    fontWeight: "bolder",
-    fontSize: "15px",
-    textDecoration: "none",
-    outlineColor: "#e8f4f8"
-  },
-  hamburgerButton: {
-    display: "none",
-    height: "50px",
-    cursor: "pointer",
-    outlineColor: "#e8f4f8",
-
-    [theme.breakpoints.down("sm")]: {
-      display: "block"
-    }
-  },
-  navChildren: {
-    position: "fixed",
-    height: "50px",
-    width: "100%",
-    top: "70px",
-    zIndex: "9999"
-  },
-  mobileListContainer: {
-    display: "none",
-    width: "250px",
-    height: "110vh",
-    position: "fixed",
-    right: "0",
-    top: "0",
-    float: "right",
-    color: "#ffffff",
-    overflowX: "hidden",
-    overflowY: "hidden",
-    zIndex: "10000",
-
-    [theme.breakpoints.down("sm")]: {
-      display: "flex",
-      justifyContent: "center"
-    }
-  },
-  hideMobContainer: {
-    width: 0
-  },
-  showMobContainer: {
-    width: "250px"
-  },
-  scrollOut: {
-    position: "absolute",
-    right: "-252px",
-    transition: " right 0.5s"
-  },
-  scrollIn: {
-    position: "absolute",
-    right: "0",
-    transition: "right 0.5s"
-  },
-  mobileList: {
-    display: "flex",
-    listStyle: "none",
-    alignItems: "flex-start",
-    flexDirection: "column",
-    backgroundColor: "#993366",
-    position: "absolute",
-    right: "0",
-    top: "0",
-    margin: "0",
-    width: "252px",
-    height: "110vh",
-    padding: "100px 25px",
-    zIndex: "11000"
-  },
-  NavButton: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "auto",
-    height: "40px",
-    backgroundColor: "#666699",
-    fontSize: "14px",
-    fontWeight: "400",
-    fontStyle: "normal",
-    fontStretch: "normal",
-    lineHeight: "1.15",
-    letterSpacing: "0.25px",
-    color: "#ffffff",
-    borderRadius: "25px",
-    margin: "25px 0",
-    outlineColor: "#e8f4f8",
-    cursor: "pointer",
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    textDecoration: "none"
-  },
-  NavButtonDesktop: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "auto",
-    height: "40px",
-    backgroundColor: "#8585ad",
-    fontSize: "14px",
-    fontWeight: "800",
-    fontStyle: "normal",
-    fontStretch: "normal",
-    lineHeight: "1.15",
-    letterSpacing: "1.25px",
-    color: "#ffffff",
-    borderRadius: "25px",
-    outlineColor: "#e8f4f8",
-    cursor: "pointer",
-    marginRight: "24px",
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    textDecoration: "none"
-  },
-  fadeBackground: {
-    position: "fixed",
-    top: "0",
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: "rgba(255,255,255, 0.5)",
-    zIndex: "9999",
-    display: "none",
-
-    [theme.breakpoints.down("sm")]: {
-      display: "block"
-    }
-  },
-  twitterHandle: {
-    display: "flex",
-    justifyContent: "space-between",
-    width: "120px",
-    alignItems: "center"
-  }
-});
-
-const trackButtonLinkClick = device => {
-  tracking.trackButtonLinkClick(device);
+const trackSearchButtonLinkClick = (device) => {
+  tracking.trackSearchButtonLinkClick(device);
 };
 
 const NavItem = ({
@@ -202,47 +24,63 @@ const NavItem = ({
   classes,
   onClickHandler,
   subsection,
-  target
+  target,
 }) => {
   return (
     <li className={classes.item} onClick={onClickHandler}>
-      <Typography
-        component="a"
-        target={target}
-        href={href}
-        className={subsection ? classes.subsectionLink : classes.link}
-      >
-        {text}
-      </Typography>
+      <Link href={href} className={classes.link} passHref>
+        <Typography
+          component="a"
+          target={target}
+          className={subsection ? classes.subsectionLink : classes.link}
+        >
+          {text}
+        </Typography>
+      </Link>
     </li>
   );
 };
 
-const NavListDesktop = ({ classes }) => {
+
+const NavListDesktop = ({ classes, router, handleLangChange }) => {
+
+
+
   return (
     <ul className={classes.container}>
       <NavItem
-        href="mailto:info@timeforme.today"
-        text={<FormattedMessage id="contact" defaultMessage="Contact" />}
-        classes={classes}
-      />    
-      <a
-        href="/add"
-        className={classes.NavButtonDesktop}
-        tabIndex={0}
-        onClick={() => {
-          trackButtonLinkClick("desktop");
-        }}
-      >
-        <Typography component="span" className={classes.link}>
-          Add a Session
-        </Typography>
-      </a>
+        href="/contribute"
+        text={<FormattedMessage id="nav.contribute" defaultMessage="Contribute" />}
+        classes={classes} 
+      />
+
+      <NavItem
+        href="/about"
+        text={<FormattedMessage id="nav.about" defaultMessage="About" />}
+        classes={classes} 
+      />
+
+      {ALT_LANGUAGES.length > 1 &&
+        <li>
+          <Select
+            value={router.locale}
+            onChange={event => handleLangChange(event, router)}
+            MenuProps={{style: {zIndex: "100000"}}}
+            className={classNames(classes.langSelect, classes.link)}
+          >
+            {ALT_LANGUAGES.map((locale) => (
+              <MenuItem key={locale} value={locale}>
+                  {locale.toUpperCase()}
+              </MenuItem>
+            ))}
+          </Select>
+        </li>
+      }
     </ul>
   );
 };
 
-const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav }) => {
+const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav, router, handleLangChange }) => {
   return (
     <div
       className={classNames(
@@ -250,20 +88,34 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav }) => {
         "mob-navbar"
       )}
     >
-      <ul className={classes.mobileList}>    
-        <a
-          href="/add"
-          className={classes.NavButton}
-          tabIndex={0}
-          onClick={() => {
-            toggleMobileNav();
-            trackButtonLinkClick("mobile");
-          }}
-        >
-          <Typography component="span" className={classes.link}>
-            Add a Session
-          </Typography>
-        </a>
+      <ul className={classes.mobileList}>
+        <NavItem
+          onClickHandler={toggleMobileNav}
+          href="/about"
+          text={<FormattedMessage id="nav.about" defaultMessage="About" />}
+          classes={classes}
+        />
+
+        {ALT_LANGUAGES.length > 1 &&
+          <Select
+            value={router.locale}
+            onChange={event => handleLangChange(event, router)}
+            MenuProps={{style: {zIndex: "10000"}}}
+            className={classNames(classes.langSelect, classes.link)}
+          >
+            {ALT_LANGUAGES.map((locale) => (
+              <MenuItem key={locale} value={locale}>{locale.toUpperCase()}</MenuItem>
+            ))}
+          </Select>
+        }
+
+        <NavItem
+          onClickHandler={toggleMobileNav}
+          href="/contribute"
+          subsection={true}
+          text={<FormattedMessage id="nav.contribute" defaultMessage="Contribute" />}
+          classes={classes}
+        />        
 
         <NavItem
           onClickHandler={toggleMobileNav}
@@ -271,28 +123,47 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav }) => {
           subsection={true}
           text={
             <FormattedMessage
-              id="privacyPoilcy"
+              id="nav.privacyPoilcy"
               defaultMessage="Privacy Policy"
             />
           }
           classes={classes}
         />
+
         <NavItem
           onClickHandler={toggleMobileNav}
-          href="mailto:info@timeforme.today"
+          href="mailto:info@yourdigitalrights.org"
           subsection={true}
-          text={<FormattedMessage id="contact" defaultMessage="Contact" />}
+          text={<FormattedMessage id="nav.contact" defaultMessage="Contact Us" />}
           classes={classes}
-        />          
+        />
+
+        <NavItem
+          subsection={true}
+          target="_blank"
+          href="https://twitter.com/search?q=ownyourdata&src=typeahead_click"
+          text={
+            <div className={classes.twitterHandle}>
+              <img src="/images/sh/tw-grey.svg" />
+              <FormattedMessage
+                id="nav.twitterHastag"
+                defaultMessage="#ownyourdata"
+              />
+            </div>
+          }
+          classes={classes}
+        />
       </ul>
     </div>
   );
 };
+
 class Nav extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      mobileNavOpen: false
+      mobileNavOpen: false,
     };
     this.toggleMenu = React.createRef();
     this.hamburgerButton = React.createRef();
@@ -311,12 +182,17 @@ class Nav extends Component {
   }
 
   toggleMobileNav() {
-    this.setState(currentState => {
+    this.setState((currentState) => {
       return {
-        mobileNavOpen: !currentState.mobileNavOpen
+        mobileNavOpen: !currentState.mobileNavOpen,
       };
     });
   }
+
+  handleLangChange = (event, router) => {
+    cookieCutter.set('NEXT_LOCALE', event.target.value);
+    router.push(router.asPath, router.asPath, {locale: event.target.value});
+  };
 
   handleCloseNav(event) {
     if (
@@ -336,22 +212,22 @@ class Nav extends Component {
       <div>
         <nav ref={this.toggleMenu} className={classes.nav}>
           <a className={classes.logoLink} href="/">
-            <img className={classes.logo} src="/type.svg" tabIndex={0} />
+            <img className={classes.logo} src="/images/type.svg" tabIndex={0} />
           </a>
-          <NavListDesktop classes={classes} />
+          <NavListDesktop classes={classes} router={this.props.router} handleLangChange={this.handleLangChange} />
           <img
             className={classes.hamburgerButton}
             src={
               mobileNavOpen
-                ? "/close-icon.svg"
-                : "/hamburgerIcon.svg"
+                ? "/images/close-icon.svg"
+                : "/images/hamburgerIcon.svg"
             }
             onBlur={this.onBlurHandler}
             onClick={this.toggleMobileNav}
             tabIndex={0}
           />
         </nav>
-        {children && <div className={classes.navChildren}>{children}</div>}
+        <div className={classes.navChildren}>{children}</div>
 
         <div
           ref={this.hamburgerButton}
@@ -365,6 +241,8 @@ class Nav extends Component {
             classes={classes}
             mobileNavOpen={mobileNavOpen}
             toggleMobileNav={this.toggleMobileNav}
+            router={this.props.router}
+            handleLangChange={this.handleLangChange}
           />
         </div>
         {mobileNavOpen && <div className={classes.fadeBackground} />}
@@ -372,4 +250,4 @@ class Nav extends Component {
     );
   }
 }
-export default withStyles(styles)(Nav);
+export default withStyles(styles)(withRouter(Nav));
