@@ -48,10 +48,10 @@ async function fetchDataBrokers() {
   data = await data.json();
   var index = generateIndexFromHeaders(data['values'][0]);
   var index_health = getHealthFieldIndex(data['values'][0]);
-  var results = {};
+  var results = [];
   for (var i = 0; i < data['values'].length; i++) {
     var row = {}
-    if (data['values'][i][index_health] && data['values'][i][index_health].length > 0 ) {
+    if (i == 0 || (data['values'][i][index_health] && data['values'][i][index_health].length > 0 )) {
       continue;
     }
     for (var j = 0; j < data['values'][i].length; j++) {
@@ -59,9 +59,8 @@ async function fetchDataBrokers() {
         row[index[j]] = data['values'][i][j];
       }
     };
-    results[i] = row;
+    results.push(row);
   };
-  delete results[0];
   return results;
 };
 

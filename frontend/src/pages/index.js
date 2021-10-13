@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Social from "../components/Social";
-import tracking from "../utils/tracking";
 import { withStyles } from "@material-ui/core/styles";
 import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { NextSeo } from 'next-seo';
