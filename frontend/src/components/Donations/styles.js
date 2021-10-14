@@ -1,5 +1,4 @@
 import { container } from "../../styles/layout";
-import { theme } from "../../styles/theme";
 
 const Theme = (theme) => ({
   donate: {

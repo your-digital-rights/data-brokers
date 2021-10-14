@@ -51,7 +51,7 @@ const Privacy = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage id="privacy.lastUpdated" defaultMessage="Last updated:" />{" "}
             <FormattedDate
-              value={new Date(2020, 5, 18)}
+              value={new Date(2021, 9, 15)}
               year="numeric"
               month="long"
               day="2-digit"
@@ -64,7 +64,7 @@ const Privacy = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="privacy.promiseBody"
-              defaultMessage="You own your data. We exist to help you control who has access to it. We want to be transparent in this regard, and we strongly believe in keeping your personal information personal, private and secure. We will limit the Personal Data we collect from you to the absolute minimum required to deliver this Service (yourdigitalrights.org). We will not sell or rent your personal information to anyone and will not retain it on our servers. We will only share your personal information when it is required to provide the service or as otherwise outlined in this Policy."
+              defaultMessage="You own your data. We limit the Personal Data we collect from you to the absolute minimum required to deliver this Service (databrokerswatch.org). We will not sell or rent your personal information to anyone and will not retain it on our servers. We will only share your personal information when it is required to provide the service or as otherwise outlined in this Policy."
             />
           </Typography>
           <br />
@@ -82,18 +82,6 @@ const Privacy = ({ classes, router }) => {
             <ul>
               <li>
                 <FormattedMessage
-                  id="privacy.personalDataBodyOneA"
-                  defaultMessage="Your name"
-                />
-              </li>
-              <li>
-                <FormattedMessage
-                  id="privacy.personalDataBodyOneB"
-                  defaultMessage="Additional information needed to identify you with the organizations you choose to opt-out from (such as a Username, Customer ID or Account Number)"
-                />
-              </li>
-              <li>
-                <FormattedMessage
                   id="privacy.personalDataBodyOneC"
                   defaultMessage="Cookies and Usage Data"
                 />
@@ -102,19 +90,6 @@ const Privacy = ({ classes, router }) => {
             <FormattedMessage
               id="privacy.personalDataBodyOneE"
               defaultMessage="By voluntarily providing us with Personal Data, you are consenting to our use of it in accordance with this Privacy Policy. If you provide Personal Data to this website, you acknowledge and agree that such Personal Data may be transferred from your current location to the offices and servers of yourdigitalrights.org and the authorized third parties referred to in this Policy."
-            />
-          </Typography>
-          <br />
-          <Typography gutterBottom={true} variant="body2">
-            <FormattedMessage
-              id="privacy.nameAndAdditionalInfo"
-              defaultMessage="Name and Additional Information (such as a Username, Customer ID or Account Number)"
-            />
-          </Typography>
-          <Typography gutterBottom={true}>
-            <FormattedMessage
-              id="privacy.nameAndAdditionalInfoBody2"
-              defaultMessage="We do not retain any of this information on our servers and do not share it with any 3rd parties. We use this information to generate a request email which is rendered on your personal computer via your default email client. It is up to you to then send this email."
             />
           </Typography>
           <br />
@@ -164,13 +139,12 @@ const Privacy = ({ classes, router }) => {
               id="privacy.contactBody"
               defaultMessage="If you have questions or concerns about this Privacy Policy, please contact us at {mail}."
               values={{
-                mail: <a href="mailto:info@yourdigitalrights.org">info@yourdigitalrights.org</a>,
+                mail: <a href="mailto:info@consciousdigital.org">info@consciousdigital.org</a>,
               }}
             />
           </Typography>
         </Paper>
       </div>
-      <Donations />
       <Footer />
     </div>
   );

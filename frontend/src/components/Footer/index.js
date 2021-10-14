@@ -86,7 +86,7 @@ const DisclaimerText = (
 const QueryText = (
   <FormattedMessage
     id="footer.contact"
-    defaultMessage="For more information please <a>contact us</a>. © Copyright 2020"
+    defaultMessage="For more information please <a>contact us</a>. © Copyright 2019 - 2022"
     values={{
       a: txt => (
         <a target="_blank" href="mailto:info@consciousdigital.org" style={{ textDecoration: "none" }}>

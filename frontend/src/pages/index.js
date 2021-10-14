@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Social from "../components/Social";
+import Donations from "../components/Donations";
 import { withStyles } from "@material-ui/core/styles";
 import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { NextSeo } from 'next-seo';
@@ -33,7 +34,7 @@ function Index({ classes, router }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchDataBrokers();
-      setDataBrokers(response);
+      setDataBrokers(response.Organizations);
     };
     fetchData();
   });
@@ -54,6 +55,7 @@ function Index({ classes, router }) {
         <Hero dataBrokers={dataBrokers} />
         <DataBrokersDB dataBrokers={dataBrokers} />
         <Social />
+        <Donations />
         <Footer />
       </div>
     </div>
