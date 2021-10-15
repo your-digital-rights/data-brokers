@@ -2,7 +2,7 @@ const fetch = require("universal-fetch");
 const url = require('url');
 
 const SHEET_ID = "1vcImZXpP5OCJ_M0Eyjqv8je1fOZxD8IULDOAd04z5Zw";
-const API_KEY = "AIzaSyACYZ4LvYEq0Wm9gmz_2bJyHAH6lv6yeb4";
+const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
 
 let data = fetchDataBrokers();
 
@@ -42,26 +42,31 @@ function getHealthFieldIndex(headerRow) {
 
 
 async function fetchDataBrokers() {
-  let data = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Master%20List%20Latest!A:BQ?key=${API_KEY}`
-  );
-  data = await data.json();
-  var index = generateIndexFromHeaders(data['values'][0]);
-  var index_health = getHealthFieldIndex(data['values'][0]);
-  var results = [];
-  for (var i = 0; i < data['values'].length; i++) {
-    var row = {}
-    if (i == 0 || (data['values'][i][index_health] && data['values'][i][index_health].length > 0 )) {
-      continue;
-    }
-    for (var j = 0; j < data['values'][i].length; j++) {
-      if (!EXCLUDE_LIST.includes(index[j])) {
-        row[index[j]] = data['values'][i][j];
+  try {
+    let data = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Master%20List%20Latest!A:BQ?key=${API_KEY}`
+    );
+    data = await data.json();
+    var index = generateIndexFromHeaders(data['values'][0]);
+    var index_health = getHealthFieldIndex(data['values'][0]);
+    var results = [];
+    for (var i = 0; i < data['values'].length; i++) {
+      var row = {}
+      if (i == 0 || (data['values'][i][index_health] && data['values'][i][index_health].length > 0 )) {
+        continue;
       }
+      for (var j = 0; j < data['values'][i].length; j++) {
+        if (!EXCLUDE_LIST.includes(index[j])) {
+          row[index[j]] = data['values'][i][j];
+        }
+      };
+      results.push(row);
     };
-    results.push(row);
-  };
-  return {"License": "GNU General Public License v3.0", "Organizations": results};
+    return {"License": "GNU General Public License v3.0", "Organizations": results};
+  } 
+  catch (e) {
+    console.log(e);
+  }
 };
 
 setInterval(() => {
