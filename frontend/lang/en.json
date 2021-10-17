@@ -1,0 +1,215 @@
+{
+  "about.aboutTitle": {
+    "message": "Our mission"
+  },
+  "about.consciousDigital": {
+    "message": "Who we are"
+  },
+  "about.consciousDigital1": {
+    "message": "DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives which promote and advance Digital Human Rights."
+  },
+  "about.description": {
+    "message": "Your Digital Rights was created because we believe that you have the right to privacy, and that exercising your right to privacy should be easy."
+  },
+  "about.funding": {
+    "message": "Funding"
+  },
+  "about.fundingBody1": {
+    "message": "This project is self funded by it’s creators, and with the help of your donations."
+  },
+  "about.missionBody1": {
+    "message": "DataBrokersWatch.org was created because we believe that privacy is a basic human right, and that exercising this right should be easy. The European {gdpr} (GDPR) and the {ccpa} (CCPA) provide the legal infrastructure to protect people’s fundamental right of privacy online."
+  },
+  "about.missionBody3": {
+    "message": "This is a free service. We are not a business and do not have a business model. We do not offer any services to organizations. We do not collect or trade any personal data. This service is <a>Open Source</a>."
+  },
+  "about.sponsors": {
+    "message": "Sponsors"
+  },
+  "about.sponsorsBody4": {
+    "message": "{innocraft} - for providing a hosted version of Matomo (Piwik), the open source and privacy minded web analytics platform."
+  },
+  "about.sponsorsTitle": {
+    "message": "We’d like to thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
+  },
+  "about.title": {
+    "message": "About Us"
+  },
+  "contribute.creadit": {
+    "message": "While we cannot afford to pay you for your work, we are more than happy to give you credit for your contributions, whether it's on this website, on github, or in other ways."
+  },
+  "contribute.creditTitle": {
+    "message": "Credit"
+  },
+  "contribute.description": {
+    "message": "Help us improve YourDigitalRights.org."
+  },
+  "contribute.dev": {
+    "message": "Our repositories are hosted on GitHub, with the main one being for this <a>website</a>. The best way to start is to get in touch via <email>email</email>. We will then add you to our slack channel and share ongoing development efforts. Alternatively, feel free to clone the repository and submit pull requests."
+  },
+  "contribute.devTitle": {
+    "message": "Help with Development"
+  },
+  "contribute.reportAProblem": {
+    "message": "If you experience problems with this site you can report them in the <a1>issue tracker</a1>, or via <a2>email</a2>."
+  },
+  "contribute.reportAProblemTitle": {
+    "message": "Report a Problem"
+  },
+  "contribute.research": {
+    "message": "We are always looking for better ways to promote Digital Rights and make them more accessible. Whether it's to better understand how people use technology or how organizations abuse it, there are always research projects going on. Please <email>email</email> us if you'd like to get involved."
+  },
+  "contribute.researchTitle": {
+    "message": "Help with research"
+  },
+  "contribute.subtitle": {
+    "message": "This project is entirely developed and maintained by volunteers. If you are concerned about the loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital services then you can help:"
+  },
+  "contribute.title": {
+    "message": "Contribute"
+  },
+  "donations.Bitcoin": {
+    "message": "Donate Bitcoin"
+  },
+  "donations.Liberapay": {
+    "message": "Donate via Liberapay"
+  },
+  "donations.donateIntro": {
+    "message": "YourDigitalRights.org was created because we believe that privacy matters, and that exercising your right to privacy should be easy. That’s why we’ve made it free. Donations allow us to spend more time improving this service."
+  },
+  "donations.headingDonate": {
+    "message": "We need your support"
+  },
+  "footer.contact": {
+    "message": "For more information please <a>contact us</a>. © Copyright 2019 - 2022"
+  },
+  "footer.disclaimer": {
+    "message": "<span>Disclaimer:</span> This service is provided as is, without warranty of any kind. Use of this service is entirely at your own risk. We cannot take responsibility for any direct or indirect damages resulting from the use of this service. The information provided by this service along with the content on our website related to legal matters is provided for your private use and does not constitute legal advice. If you need legal advice for a specific problem, you should consult with a licensed attorney."
+  },
+  "footer.madeBy": {
+    "message": "<a>Made by Conscious Digital</a>"
+  },
+  "footer.mission": {
+    "message": "<a>Mission</a>"
+  },
+  "footer.privacyPolicy": {
+    "message": "<a>Privacy Policy</a>"
+  },
+  "footer.wishList": {
+    "message": "make a wish on our roadmap"
+  },
+  "hero.headerText": {
+    "message": "We curate the largest publiclly avialble dataset of data brokers, currently tracking {num} organizations. Data Brokers are companies which collect personal data from various soruces and then licanse this data to other organizations, typically without the knowledge or consent of the individual. The dataset is"
+  },
+  "hero.heading": {
+    "message": "Data Brokers Watch"
+  },
+  "hero.subheading": {
+    "message": "Mapping the data broker ecosystem"
+  },
+  "index.description": {
+    "message": "Data broker watch - track the trackers."
+  },
+  "index.title": {
+    "message": "Data Broker Watch"
+  },
+  "nav.about": {
+    "message": "About"
+  },
+  "nav.contact": {
+    "message": "Contact Us"
+  },
+  "nav.contribute": {
+    "message": "Contribute"
+  },
+  "nav.privacyPoilcy": {
+    "message": "Privacy Policy"
+  },
+  "nav.twitterHastag": {
+    "message": "#ownyourdata"
+  },
+  "privacy.analyticsBodyOneA": {
+    "message": "Matomo: a privacy minded web analytics service by Innocraft. You can visit their { matomo } page."
+  },
+  "privacy.contact": {
+    "message": "Contact"
+  },
+  "privacy.contactBody": {
+    "message": "If you have questions or concerns about this Privacy Policy, please contact us at {mail}."
+  },
+  "privacy.cookies": {
+    "message": "Cookies and Tracking"
+  },
+  "privacy.cookiesBody": {
+    "message": "In operating the Service we use a technology called \"cookies\". A cookie is a piece of information that the computer hosting our Service gives to your browser when you access the Service. While we do not use cookies to deliver the Service, we use cookies to help us analyze Service usage more accurately, and to save the choices you make on the website so that it is easier for you to use the service next time. In all cases in which we use cookies, we will not collect Personal Data except with your explicit permission. On most web browsers, you will find a \"help\" section on the toolbar. Please refer to this section for information on how to receive notification when you are receiving a new cookie and how to turn cookies off."
+  },
+  "privacy.description": {
+    "message": "You own your data, we exist to help you control who has access to it. This is our privay policy page."
+  },
+  "privacy.lastUpdated": {
+    "message": "Last updated:"
+  },
+  "privacy.personalData": {
+    "message": "Personal Data That You Provide"
+  },
+  "privacy.personalDataBody1": {
+    "message": "While using this Service, we may ask you to provide us with certain personal information that can be used to contact or identify you (\"Personal Data\"). The Personally identifiable information collect is:"
+  },
+  "privacy.personalDataBodyOneC": {
+    "message": "Cookies and Usage Data"
+  },
+  "privacy.personalDataBodyOneE": {
+    "message": "By voluntarily providing us with Personal Data, you are consenting to our use of it in accordance with this Privacy Policy. If you provide Personal Data to this website, you acknowledge and agree that such Personal Data may be transferred from your current location to the offices and servers of yourdigitalrights.org and the authorized third parties referred to in this Policy."
+  },
+  "privacy.privacyTitle": {
+    "message": "Privacy Policy"
+  },
+  "privacy.promise": {
+    "message": "Our Promise"
+  },
+  "privacy.promiseBody": {
+    "message": "You own your data. We limit the Personal Data we collect from you to the absolute minimum required to deliver this Service (databrokerswatch.org). We will not sell or rent your personal information to anyone and will not retain it on our servers. We will only share your personal information when it is required to provide the service or as otherwise outlined in this Policy."
+  },
+  "privacy.title": {
+    "message": "Privacy Policy"
+  },
+  "privacy.usageDataBody": {
+    "message": "We may collect information on how the Service is accessed and used (\"Usage Data\"). This Usage Data may include information such as the Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, the actions you perform, unique device identifiers and other diagnostic data. We use the following third-party Service Provider to monitor and analyze the use of our Service:"
+  },
+  "social.chromeCTA": {
+    "message": "Download it for Chrome"
+  },
+  "social.chromeTitle": {
+    "message": "Google Chrome Extension"
+  },
+  "social.emailBody": {
+    "message": "Check out YourDigitalRights.org, a free service which makes it easy to find out what personal data thousands of organizations have on you, and get them to delete it."
+  },
+  "social.emailSubject": {
+    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it | Your Digital Rights"
+  },
+  "social.extensionHeadline": {
+    "message": "Opt out directly from your browser"
+  },
+  "social.extensionText": {
+    "message": "Do you want better control over who has access to your personal data? Our browser extension allows you to opt out of the websites you visit with a click of a button."
+  },
+  "social.facebookQuote": {
+    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+  },
+  "social.firefoxCTA": {
+    "message": "Download it for Firefox"
+  },
+  "social.frefoxTitle": {
+    "message": "FireFox Extention"
+  },
+  "social.shareHeading": {
+    "message": "Please help us spread the word"
+  },
+  "social.twitterTitle": {
+    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+  },
+  "usageData": {
+    "message": "Usage Data"
+  }
+}
