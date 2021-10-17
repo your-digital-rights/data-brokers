@@ -107,7 +107,7 @@ const Footer = ({ classes }) => {
     <div className={classes.root}>
       <div className={classes.inner}>
         <div className={classes.innerLeft}>
-          <Typography component="p" variant="body3">
+          <Typography component="p" variant="subtitle1">
             <FormattedMessage
               id="footer.madeBy"
               defaultMessage="<a>Made by Conscious Digital</a>"
@@ -116,7 +116,7 @@ const Footer = ({ classes }) => {
               }}
             />
           </Typography>          
-          <Typography component="p" variant="body3">
+          <Typography component="p" variant="subtitle1">
             <FormattedMessage
               id="footer.privacyPolicy"
               defaultMessage="<a>Privacy Policy</a>"
@@ -125,7 +125,7 @@ const Footer = ({ classes }) => {
               }}
             />
           </Typography>
-          <Typography component="p" variant="body3">
+          <Typography component="p" variant="subtitle1">
             <FormattedMessage
               id="footer.mission"
               defaultMessage="<a>Mission</a>"
@@ -145,11 +145,11 @@ const Footer = ({ classes }) => {
           </a>
         </div>
         <div className={classes.innerRight}>
-          <Typography gutterBottom={true} color="textSecondary" variant="body3">
+          <Typography color="textSecondary" variant="subtitle2">
             {DisclaimerText}
           </Typography>
           <br/>
-          <Typography color="textSecondary" variant="body3">
+          <Typography color="textSecondary" variant="subtitle2">
             {QueryText}
           </Typography>
         </div>
