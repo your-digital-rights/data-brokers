@@ -148,25 +148,9 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav, router, handle
 
         <NavItem
           onClickHandler={toggleMobileNav}
-          href="mailto:info@yourdigitalrights.org"
+          href="mailto:info@consciousdigital.org"
           subsection={true}
           text={<FormattedMessage id="nav.contact" defaultMessage="Contact Us" />}
-          classes={classes}
-        />
-
-        <NavItem
-          subsection={true}
-          target="_blank"
-          href="https://twitter.com/search?q=ownyourdata&src=typeahead_click"
-          text={
-            <div className={classes.twitterHandle}>
-              <img src="/images/sh/tw-grey.svg" />
-              <FormattedMessage
-                id="nav.twitterHastag"
-                defaultMessage="#ownyourdata"
-              />
-            </div>
-          }
           classes={classes}
         />
       </ul>

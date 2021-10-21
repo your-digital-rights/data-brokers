@@ -34,7 +34,7 @@ const styles = (theme) => ({
 
 const About = ({ classes, router }) => {
   const intl = useIntl();
-  const Description = intl.formatMessage({id: "about.description", defaultMessage: "Your Digital Rights was created because we believe that you have the right to privacy, and that exercising your right to privacy should be easy."});
+  const Description = intl.formatMessage({id: "about.description", defaultMessage: "We track and map of the Data Broker ecosystem."});
   const BaseURL = "/about";
 
   return (
@@ -57,7 +57,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.missionBody1"
-              defaultMessage="DataBrokersWatch.org was created because we believe that privacy is a basic human right, and that exercising this right should be easy. The European {gdpr} (GDPR) and the {ccpa} (CCPA) provide the legal infrastructure to protect people’s fundamental right of privacy online."
+              defaultMessage="DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital experiences."
               values={{
                 gdpr: (
                   <a target="_blank" href="https://gdpr.eu/tag/gdpr/">
@@ -76,7 +76,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.missionBody3"
-              defaultMessage="This is a free service. We are not a business and do not have a business model. We do not offer any services to organizations. We do not collect or trade any personal data. This service is <a>Open Source</a>."
+              defaultMessage="This is a free service intended to serve the wider community. We are not a business and do not have a business model. This service is <a>Open Source</a>."
               values={{
                 a: chunks =>  (
                   <a 
@@ -96,7 +96,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.consciousDigital1"
-              defaultMessage="DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives which promote and advance Digital Human Rights."
+              defaultMessage="DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives to promote and advance Digital Human Rights."
               values= {{
                 cd: <a target="_blank" href="https://consciousdigital.org/">Conscious Digital</a>
               }}
