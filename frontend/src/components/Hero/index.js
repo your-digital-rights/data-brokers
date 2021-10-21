@@ -14,6 +14,7 @@ const Hero = ({ classes, dataBrokers, children }) => {
             color="inherit"
             component="h1"
             id="hero-heading"
+            className={classes.title}
           >
             <FormattedMessage
               id="hero.heading"
@@ -26,6 +27,7 @@ const Hero = ({ classes, dataBrokers, children }) => {
             gutterBottom={true}
             component="h2"
             id="hero-subheading"
+            className={classes.subTitle}
           >
             <FormattedMessage
               id="hero.subheading"
@@ -41,7 +43,7 @@ const Hero = ({ classes, dataBrokers, children }) => {
           >  
             <FormattedMessage
               id="hero.headerText"
-              defaultMessage="We curate the largest publiclly avialble dataset of data brokers, currently tracking {num} organizations. Data Brokers are companies which collect personal data from various soruces and then licanse this data to other organizations, typically without the knowledge or consent of the individual. The dataset is "
+              defaultMessage="Our goal is to curate the largest publicly available dataset of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations."
               values={{
                 num: dbCount
               }}

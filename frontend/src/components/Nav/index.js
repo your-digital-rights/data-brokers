@@ -49,6 +49,13 @@ const NavListDesktop = ({ classes, router, handleLangChange }) => {
   return (
     <ul className={classes.container}>
       <NavItem
+        href="/#whyDataBrokers"
+        text={
+          <FormattedMessage id="nav.whyDataBrokers" defaultMessage="Why data brokers?" />
+        }
+        classes={classes}
+      />
+      <NavItem
         href="/contribute"
         text={<FormattedMessage id="nav.contribute" defaultMessage="Contribute" />}
         classes={classes} 
@@ -89,6 +96,23 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav, router, handle
       )}
     >
       <ul className={classes.mobileList}>
+      <NavItem
+          onClickHandler={toggleMobileNav}
+          href="/#whyDataBrokers"
+          text={
+            <FormattedMessage id="nav.whyDataBrokers" defaultMessage="Why data brokers?" />
+          }
+          classes={classes}
+        />
+        
+        <NavItem
+          onClickHandler={toggleMobileNav}
+          href="/contribute"
+          subsection={true}
+          text={<FormattedMessage id="nav.contribute" defaultMessage="Contribute" />}
+          classes={classes}
+        />   
+
         <NavItem
           onClickHandler={toggleMobileNav}
           href="/about"
@@ -108,15 +132,7 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav, router, handle
             ))}
           </Select>
         }
-
-        <NavItem
-          onClickHandler={toggleMobileNav}
-          href="/contribute"
-          subsection={true}
-          text={<FormattedMessage id="nav.contribute" defaultMessage="Contribute" />}
-          classes={classes}
-        />        
-
+     
         <NavItem
           onClickHandler={toggleMobileNav}
           href="/privacy"

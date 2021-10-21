@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useIntl } from "react-intl";
 import Footer from "../components/Footer";
+import AboutDataBrokers from "../components/AboutDataBrokers";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Social from "../components/Social";
@@ -54,6 +55,7 @@ function Index({ classes, router }) {
       <div className={classes.mainContainer}>
         <Hero dataBrokers={dataBrokers} />
         <DataBrokersDB dataBrokers={dataBrokers} />
+        <AboutDataBrokers />
         <Social />
         <Donations />
         <Footer />

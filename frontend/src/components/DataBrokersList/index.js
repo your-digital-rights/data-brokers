@@ -24,11 +24,15 @@ const CountryCellRenderer = params => {
 };
 
 const OptOutCellRenderer = params => {
-  return (
-    <IconButton color='black' target='_blank' href={params.value}>
-      <CancelScheduleSendIcon/>
-    </IconButton>
-  );
+  if (params.value) {
+    return (
+      <IconButton color='black' target='_blank' href={params.value}>
+        <CancelScheduleSendIcon/>
+      </IconButton>
+    );
+  } else {
+    return null;
+  }
 };
 
 class DataBrokersDB extends React.Component {
@@ -72,13 +76,37 @@ class DataBrokersDB extends React.Component {
     this.gridApi.setQuickFilter(document.getElementById('quickFilter').value);
   };
 
+  onFirstDataRendered = (params) => {
+    params.api.sizeColumnsToFit();
+  };
+
+  onGridSizeChanged = (params) => {
+    var gridWidth = document.getElementById('grid-wrapper').offsetWidth;
+    var columnsToShow = [];
+    var columnsToHide = [];
+    var totalColsWidth = 0;
+    var allColumns = params.columnApi.getAllColumns();
+    for (var i = 0; i < allColumns.length; i++) {
+      var column = allColumns[i];
+      totalColsWidth += column.getMinWidth();
+      if (totalColsWidth > gridWidth && i != allColumns.length - 1) {
+        columnsToHide.push(column.colId);
+      } else {
+        columnsToShow.push(column.colId);
+      }
+    }
+    params.columnApi.setColumnsVisible(columnsToShow, true);
+    params.columnApi.setColumnsVisible(columnsToHide, false);
+    params.api.sizeColumnsToFit();
+  };
+
   render() {
     const { classes } = this.props;
     const { dataBrokers } = this.props;
     return (
       <div className={classes.container}>
         <Paper className={classes.inner}>
-          <Paper className={classes.searchRoot} elevation={1}>
+          <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
             <SearchIcon />
             <InputBase id="quickFilter" className={classes.searchInput} placeholder="Search..." onInput={() => this.onQuickFilterChanged()} />
           </Paper>
@@ -103,13 +131,15 @@ class DataBrokersDB extends React.Component {
                   optOutCellRenderer: OptOutCellRenderer,
                   countryCellRenderer: CountryCellRenderer,
                 }}
+                onFirstDataRendered={this.onFirstDataRendered}
+                onGridSizeChanged={this.onGridSizeChanged}
               >
-                <AgGridColumn field="Domain" headerName="Domain" cellRenderer={DomainCellRenderer}></AgGridColumn>
-                <AgGridColumn field="Company Name" headerName="Name" width={100} ></AgGridColumn>
-                <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" maxWidth={100} ></AgGridColumn>
-                <AgGridColumn field="Company Category Industry Group" headerName="Industry Group" width={150} ></AgGridColumn>
-                <AgGridColumn field="Company Category Industry" headerName="Industry" width={150} ></AgGridColumn>
-                <AgGridColumn field="YDR URL" headerName="Opt-out" cellRenderer="optOutCellRenderer" maxWidth={95} ></AgGridColumn>
+                <AgGridColumn field="Domain" headerName="Domain" minWidth={150} cellRenderer={DomainCellRenderer}></AgGridColumn>
+                <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" minWidth={95} maxWidth={110} ></AgGridColumn>
+                <AgGridColumn field="Company Name" headerName="Name" minWidth={100} ></AgGridColumn>
+                <AgGridColumn field="Company Category Industry Group" headerName="Industry Group" minWidth={150} ></AgGridColumn>
+                <AgGridColumn field="Company Category Industry" headerName="Industry" minWidth={150} ></AgGridColumn>
+                <AgGridColumn field="YDR URL" headerName="Opt-out" cellRenderer="optOutCellRenderer" minWidth={95} maxWidth={100} ></AgGridColumn>
               </AgGridReact>                     
           </div>
           <Button
@@ -124,8 +154,8 @@ class DataBrokersDB extends React.Component {
           </Button>                 
         </Paper>
         <div className={classes.licanse}>
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style={{borderWidth: 0, verticalAlign: "middle"}} src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        </div> 
+            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </div> 
       </div>
     );
   }

@@ -35,11 +35,35 @@
   "about.title": {
     "message": "About Us"
   },
+  "aboutDataBrokers.imgAlt": {
+    "message": "A graphic representing data brokers"
+  },
+  "aboutDataBrokers.impact": {
+    "message": "are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital experiences."
+  },
+  "aboutDataBrokers.impactTitle": {
+    "message": "They"
+  },
+  "aboutDataBrokers.title": {
+    "message": "Why Data Brokers?"
+  },
+  "aboutDataBrokers.whatAreDataBroekrs": {
+    "message": "are companies which collect personal data from various sources and then license this data to other organizations, typically without the knowledge or consent of the individuals involved."
+  },
+  "aboutDataBrokers.whatAreDataBroekrsTitle": {
+    "message": "Data Brokers"
+  },
   "contribute.creadit": {
     "message": "While we cannot afford to pay you for your work, we are more than happy to give you credit for your contributions, whether it's on this website, on github, or in other ways."
   },
   "contribute.creditTitle": {
     "message": "Credit"
+  },
+  "contribute.database": {
+    "message": "Help us track the trackers by submiting new data brokers to our database or updating existing entries."
+  },
+  "contribute.databaseTitle": {
+    "message": "Help us improve our database"
   },
   "contribute.description": {
     "message": "Help us improve YourDigitalRights.org."
@@ -99,7 +123,7 @@
     "message": "make a wish on our roadmap"
   },
   "hero.headerText": {
-    "message": "We curate the largest publiclly avialble dataset of data brokers, currently tracking {num} organizations. Data Brokers are companies which collect personal data from various soruces and then licanse this data to other organizations, typically without the knowledge or consent of the individual. The dataset is"
+    "message": "Our goal is to curate the largest publicly available dataset of data brokers and make it available to the wider research community. The full dataset currently includes up to 60 data points on {num} organizations."
   },
   "hero.heading": {
     "message": "Data Brokers Watch"
@@ -127,6 +151,9 @@
   },
   "nav.twitterHastag": {
     "message": "#ownyourdata"
+  },
+  "nav.whyDataBrokers": {
+    "message": "Why data brokers?"
   },
   "privacy.analyticsBodyOneA": {
     "message": "Matomo: a privacy minded web analytics service by Innocraft. You can visit their { matomo } page."

@@ -28,6 +28,10 @@ const Theme = (theme) => ({
     marginBottom: "15px",
     maxWidth: "800px",
     fontSize: "22px",
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "75px",
+      fontSize: "1rem",
+    }    
   },
   WhiteText: {
     color: "white"
@@ -41,7 +45,14 @@ const Theme = (theme) => ({
     maxWidth: "75%"
   },
   title: {
-    marginBottom: 0
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
+    }      
+  },
+  subTitle:{
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    }       
   },
   introLink: {
     color: "#e89e15",
