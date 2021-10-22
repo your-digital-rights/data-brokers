@@ -12,6 +12,7 @@ import { NextSeo } from 'next-seo';
 import { withRouter } from "next/router";
 import fetchDataBrokers from "../utils/sheets";
 import DataBrokersDB from "../components/DataBrokersList";  
+import dynamic from 'next/dynamic'
 
 const styles = (theme) => ({
   topOfPagePlaceholder: {
@@ -27,14 +28,26 @@ const styles = (theme) => ({
 
 
 function Index({ classes, router }) {
-  const [dataBrokers, setDataBrokers] = useState(null);
+  const [dataBrokers, setDataBrokers] = useState([]);
   const intl = useIntl();
   const BaseURL = "";
   const Description = intl.formatMessage({id: "index.description", defaultMessage: "Data broker watch - track the trackers."});
+  const Map = dynamic(
+    () => import("../components/MainMap"), // replace '@components/map' with your component's location
+    { 
+      loading: () => <p>Map is loading</p>,
+      ssr: false 
+    } // This line is important. It's what prevents server-side render
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchDataBrokers();
+      response.Organizations.forEach(org => {
+        if (org["Company Geo Lat"] && org["Company Geo Lng"]) {
+          org.latlng = [org["Company Geo Lat"],org["Company Geo Lng"]];
+        }
+      });
       setDataBrokers(response.Organizations);
     };
     fetchData();
@@ -53,7 +66,9 @@ function Index({ classes, router }) {
       />   
       <Nav />
       <div className={classes.mainContainer}>
-        <Hero dataBrokers={dataBrokers} />
+        <Hero dataBrokers={dataBrokers}>
+          <Map dataBrokers={dataBrokers}/>
+        </Hero>
         <DataBrokersDB dataBrokers={dataBrokers} />
         <AboutDataBrokers />
         <Social />
