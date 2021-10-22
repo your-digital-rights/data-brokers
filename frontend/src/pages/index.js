@@ -35,7 +35,6 @@ function Index({ classes, router }) {
   const Map = dynamic(
     () => import("../components/MainMap"), // replace '@components/map' with your component's location
     { 
-      loading: () => <p>Map is loading</p>,
       ssr: false 
     } // This line is important. It's what prevents server-side render
   );
