@@ -5,14 +5,14 @@ const Theme = (theme) => ({
         justifyContent: "space-between",
         padding: "0 60px",
         backgroundColor: theme.palette.primary.main,
-        borderBottom: "4px solid #00508C",
+        borderBottom: "2px solid #018A70",
         height: "72px",
         width: "100%",
         zIndex: "11000",
         [theme.breakpoints.down("xs")]: {
-            padding: "0 15px",        
+            padding: "0 15px",
         },
-        position: "fixed",                
+        position: "fixed",
         top: "0",
     },
     logoLink: {
