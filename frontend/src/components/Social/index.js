@@ -224,7 +224,7 @@ const Social = ({
                 >
                   <FontAwesomeIcon
                     className={classes.extensionDownloadButtonIcon}
-                    color="#005ea5"
+                    color="#00AE8D"
                     icon={faChrome}
                   />
                   <FormattedMessage id="social.chromeCTA" defaultMessage="Download it for Chrome" />
@@ -242,7 +242,7 @@ const Social = ({
                       classes.extensionDownloadButtonIcon,
                       classes.extensionDownloadButtonIconFireFox
                     )}
-                    color="#005ea5"
+                    color="#00AE8D"
                     icon={faFirefox}
                   />
                   <FormattedMessage id="social.firefoxCTA" defaultMessage="Download it for Firefox" />

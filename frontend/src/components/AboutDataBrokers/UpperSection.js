@@ -6,7 +6,7 @@ const styles = (theme) => ({
   },
   heading: {
     display: "inline",
-    color: "#005ea5",
+    color: theme.palette.primary.main,
     fontWeight: "600",
   },
   inline: {

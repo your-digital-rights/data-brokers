@@ -11,7 +11,6 @@ const styles = (theme) => ({
     ...container,
   },
   inner: {
-    // borderTop: "2px solid #005ea5",
     marginTop: 30,
     paddingTop: 30,
     paddingBottom: 30,
@@ -21,7 +20,6 @@ const styles = (theme) => ({
     },
   },
   innerLeft: {
-    // borderTop: "2px solid #005ea5",
     width: "20%",
     float: "left",
     marginBottom: 30,
@@ -31,7 +29,6 @@ const styles = (theme) => ({
     },
   },
   innerRight: {
-    // borderTop: "2px solid #005ea5",
     width: "75%",
     float: "right",
     marginBottom: 60,
@@ -56,7 +53,7 @@ const styles = (theme) => ({
     },
   },
   DisclaimerLink: {
-    color: "#005ea5",
+    color: theme.palette.primary.main,
     fontWeight: "600",
     textDecoration: "none",
     "&:hover": {

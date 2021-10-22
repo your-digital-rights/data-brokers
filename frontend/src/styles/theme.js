@@ -6,7 +6,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       '@global': {
         a: {
-          color: '#005ea5',
+          color: '#00AE8D',
           fontWeight: '900',
         },
           "a:hover": {
@@ -16,10 +16,10 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#005ea5",
+      main: "#00AE8D",
     },
     secondary: {
-      main: "#ea9e13",
+      main: "#EF6A6E",
     },
   },
   typography: {
@@ -35,7 +35,7 @@ const theme = createTheme({
     },
     h4: {
       fontWeight: "900",
-      color: "#005ea5",
+      color: "#00AE8D",
       fontSize: "3rem",
     },    
     h6: {
@@ -43,18 +43,17 @@ const theme = createTheme({
     },
     h3: {
       fontWeight: "600",
-      color: "#005ea5",
+      color: "#00AE8D",
       fontSize: "1.8rem",
       paddingTop: "10px",
       lineHeight: "1.13333em",
     },
     h5: {
       fontWeight: "bold",
-      color: "#005ea5",
+      color: "#00AE8D",
     },
     fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
   },	
-  backgroundImage: "linear-gradient(152deg, #0973be, #005ea5)",
   color: "white",
 });
 

@@ -28,6 +28,7 @@ const Theme = (theme) => ({
     marginBottom: "15px",
     maxWidth: "800px",
     fontSize: "22px",
+    fontWeight: "normal",
     [theme.breakpoints.down("xs")]: {
       marginBottom: "75px",
       fontSize: "1rem",
