@@ -29,7 +29,7 @@ const styles = (theme) => ({
     paddingTop: "50px",
     marginTop: -10,
   },
-  
+
   offset: {
     paddingTop: "200px",
     marginTop: -160,
@@ -160,12 +160,12 @@ const Social = ({
   const twitterTitle = intl.formatMessage({
     id: "social.twitterTitle",
     defaultMessage:
-      "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org.",
+      "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
   });
   const facebookQuote = intl.formatMessage({
     id: "social.facebookQuote",
     defaultMessage:
-      "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org.",
+      "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
   });
   const emailLink = mailtoLink({ subject: emailSubject, body: emailBody });
 

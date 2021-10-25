@@ -219,7 +219,7 @@
     "message": "Do you want better control over who has access to your personal data? Our browser extension allows you to opt out of the websites you visit with a click of a button."
   },
   "social.facebookQuote": {
-    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+    "message":       "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
   },
   "social.firefoxCTA": {
     "message": "Download it for Firefox"

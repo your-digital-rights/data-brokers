@@ -500,7 +500,7 @@
   "privacy.description": [
     {
       "type": 0,
-      "value": "You own your data, we exist to help you control who has access to it. This is our privay policy page."
+      "value":       "Check out the largest publicly available dataset of data brokers and make it available to the wider research community."
     }
   ],
   "privacy.lastUpdated": [
@@ -602,7 +602,7 @@
   "social.facebookQuote": [
     {
       "type": 0,
-      "value": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+      "value":       "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
     }
   ],
   "social.firefoxCTA": [
@@ -626,7 +626,7 @@
   "social.twitterTitle": [
     {
       "type": 0,
-      "value": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+      "value":       "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
     }
   ],
   "usageData": [
