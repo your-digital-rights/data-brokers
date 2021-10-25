@@ -17,7 +17,7 @@ const AboutDBs = ({ classes }) => {
      <div className={classes.inner} >
         <div className={classes.container}>
           <img
-            src="images/img-howto.svg"
+            src="images/sad_data.png"
             alt={TitleImgAlt}
             className={classes.titleImg}
           />
@@ -34,7 +34,7 @@ const AboutDBs = ({ classes }) => {
             <UpperSection title={ImpactTitle} body={ImpactBody} />
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

@@ -34,17 +34,17 @@ const Hero = ({ classes, dataBrokers, children }) => {
               id="hero.subheading"
               defaultMessage="Mapping the data broker ecosystem"
             />
-          </Typography>          
+          </Typography>
           <Typography
             color="inherit"
             className={classes.intro}
             component="h1"
             variant="h2"
             gutterBottom={true}
-          >  
+          >
             <FormattedMessage
               id="hero.headerText"
-              defaultMessage="Our goal is to curate the largest publicly available dataset of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations."
+              defaultMessage="Our goal is to curate the largest publicly available dataset of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations distributed around the world."
               values={{
                 num: dbCount
               }}
