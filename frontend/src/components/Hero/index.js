@@ -4,7 +4,8 @@ import styles from "./styles";
 import { withStyles } from "@material-ui/core/styles";
 
 const Hero = ({ classes, dataBrokers, children }) => {
-  const dbCount = dataBrokers ? dataBrokers.length: "...";
+  var dbCount = dataBrokers ? dataBrokers.length: "...";
+  dbCount = dbCount != 0 ? dbCount : "...";
   return (
     <div className={classes.hero} >
       <div className={classes.container}>

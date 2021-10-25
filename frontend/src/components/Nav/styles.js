@@ -20,7 +20,7 @@ const Theme = (theme) => ({
         justifyContent: "center",
     },
     logo: {
-        width: "110px",
+        width: "65px",
         outlineColor: "#e8f4f8",
         [theme.breakpoints.down("xs")]: {
             width: "80px",

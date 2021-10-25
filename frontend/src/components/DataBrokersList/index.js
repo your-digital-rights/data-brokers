@@ -103,6 +103,7 @@ class DataBrokersDB extends React.Component {
   render() {
     const { classes } = this.props;
     const { dataBrokers } = this.props;
+    
     return (
       <div className={classes.container}>
         <Paper className={classes.inner}>

@@ -11,7 +11,10 @@ const Theme = (theme) => ({
   },
   heading: {
     maxWidth: "850px !important",
-    margin: "50px auto 50px auto"
+    margin: "50px auto 50px auto",
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "100px",
+    }    
   },
   container: {
     padding: "10px 30px 30px 30px",
@@ -30,7 +33,6 @@ const Theme = (theme) => ({
     fontSize: "22px",
     fontWeight: "normal",
     [theme.breakpoints.down("xs")]: {
-      marginBottom: "75px",
       fontSize: "1rem",
     }    
   },

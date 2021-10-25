@@ -8,7 +8,9 @@ export default theme => ({
     paddingTop: "30px",
     marginTop: "-120px",
     marginBottom: "30px",    
-
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "115px",
+    },
   },
   inner: {
     flexGrow: 1,
@@ -37,7 +39,7 @@ export default theme => ({
     height: 170,
     width: 170,
     [theme.breakpoints.down("sm")]: {
-      height: 150,
+      height: 170,
       width: 150,
     },
   },
