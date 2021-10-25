@@ -2,7 +2,7 @@ import { DOMAIN } from "./utils/domain";
 
 const SEO = {
   titleTemplate: '%s | DataBrokersWatch.org',
-  defaultTitle: 'Track the Trackers',
+  defaultTitle: 'Mapping the the Data Brokers ecosystem',
   openGraph: {
     type: 'website',
     locale: 'en_IE',

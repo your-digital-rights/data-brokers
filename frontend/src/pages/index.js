@@ -31,7 +31,7 @@ function Index({ classes, router }) {
   const [dataBrokers, setDataBrokers] = useState([]);
   const intl = useIntl();
   const BaseURL = "";
-  const Description = intl.formatMessage({id: "index.description", defaultMessage: "Data broker watch - track the trackers."});
+  const Description = intl.formatMessage({id: "index.description", defaultMessage: "The largest publicly available dataset of data brokers made available to the wider research community."});
   const Map = dynamic(
     () => import("../components/MainMap"), // replace '@components/map' with your component's location
     { 
