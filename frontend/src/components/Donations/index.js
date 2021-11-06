@@ -27,7 +27,7 @@ const Donations = ({ classes, children }) => {
           <Typography color="inherit" className={classes.intro}>
             <FormattedMessage
               id="donations.donateIntro"
-              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to spend more time improving this service."
+              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
             />
           </Typography>      
           <Typography color="inherit" className={classes.intro}>
