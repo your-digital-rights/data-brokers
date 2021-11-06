@@ -4,7 +4,7 @@
   "license": "GPL3",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "npm run extract:i18n && npm run compile:i18n && next",
     "start": "next start ./src",
     "build": "next build ./src",
     "deploy": "npx vercel",

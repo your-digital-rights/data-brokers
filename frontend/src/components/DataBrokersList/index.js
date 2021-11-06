@@ -9,6 +9,7 @@ import styles from "./styles";
 import CancelScheduleSendIcon from '@material-ui/icons/CancelScheduleSend';
 import IconButton from '@material-ui/core/IconButton';
 import ReactCountryFlag from "react-country-flag";
+import dynamic from 'next/dynamic'
 
 const DomainCellRenderer = params => {
   const domain = params.value.charAt(0).toUpperCase() + params.value.slice(1);
@@ -103,14 +104,22 @@ class DataBrokersDB extends React.Component {
   render() {
     const { classes } = this.props;
     const { dataBrokers } = this.props;
+    const Map = dynamic(
+      () => import("../MainMap"), // replace '@components/map' with your component's location
+      { 
+        ssr: false 
+      } // This line is important. It's what prevents server-side render
+    );
     
     return (
       <div className={classes.container}>
         <Paper className={classes.inner}>
-          <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
-            <SearchIcon />
-            <InputBase id="quickFilter" className={classes.searchInput} placeholder="Search..." onInput={() => this.onQuickFilterChanged()} />
-          </Paper>
+          <Map dataBrokers={dataBrokers}/>
+          <div className={classes.database}>
+            <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
+              <SearchIcon />
+              <InputBase id="quickFilter" className={classes.searchInput} placeholder="Search..." onInput={() => this.onQuickFilterChanged()} />
+            </Paper>
             <div
               className="ag-theme-material"
               style={{  
@@ -142,17 +151,18 @@ class DataBrokersDB extends React.Component {
                 <AgGridColumn field="Company Category Industry" headerName="Industry" minWidth={150} ></AgGridColumn>
                 <AgGridColumn field="YDR URL" headerName="Opt-out" cellRenderer="optOutCellRenderer" minWidth={95} maxWidth={100} ></AgGridColumn>
               </AgGridReact>                     
-          </div>
-          <Button
-            onClick={this.onExportButtonClick}
-            variant="contained"
-            color="secondary"
-            type="submit"
-            className={classes.exportBtn}
-            id="ExportBtn"
-          >
-            Download The List
-          </Button>                 
+            </div>
+            <Button
+              onClick={this.onExportButtonClick}
+              variant="contained"
+              color="secondary"
+              type="submit"
+              className={classes.exportBtn}
+              id="ExportBtn"
+            >
+              Download The List
+            </Button>
+          </div>                 
         </Paper>
         <div className={classes.licanse}>
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

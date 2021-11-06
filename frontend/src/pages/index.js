@@ -12,7 +12,6 @@ import { NextSeo } from 'next-seo';
 import { withRouter } from "next/router";
 import fetchDataBrokers from "../utils/sheets";
 import DataBrokersDB from "../components/DataBrokersList";  
-import dynamic from 'next/dynamic'
 
 const styles = (theme) => ({
   topOfPagePlaceholder: {
@@ -32,12 +31,6 @@ function Index({ classes, router }) {
   const intl = useIntl();
   const BaseURL = "";
   const Description = intl.formatMessage({id: "index.description", defaultMessage: "The largest publicly available dataset of data brokers made available to the wider research community."});
-  const Map = dynamic(
-    () => import("../components/MainMap"), // replace '@components/map' with your component's location
-    { 
-      ssr: false 
-    } // This line is important. It's what prevents server-side render
-  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,9 +58,7 @@ function Index({ classes, router }) {
       />   
       <Nav />
       <div className={classes.mainContainer}>
-        <Hero dataBrokers={dataBrokers}>
-          <Map dataBrokers={dataBrokers}/>
-        </Hero>
+        <Hero dataBrokers={dataBrokers}/>
         <DataBrokersDB dataBrokers={dataBrokers} />
         <AboutDataBrokers />
         <Social />

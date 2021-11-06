@@ -18,14 +18,15 @@ export default theme => ({
     justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
-    paddingLeft: 50,
-    paddingRight: 50,
-    paddingTop: 10,
-    paddingBottom: 50,
+    paddingBottom: '50px',
+  },
+  database: {
+    paddingLeft: '50px',
+    paddingRight: '50px',
     [theme.breakpoints.down("sm")]: {
-      paddingLeft: 30,
-      paddingRight: 30,
-    },
+      paddingLeft: '15px',
+      paddingRight: '15px',
+    },    
   },
   exportBtn: {
     borderRadius: "24px 24px 24px 24px",
@@ -49,8 +50,15 @@ export default theme => ({
     display: 'flex',
     alignItems: 'center',
     width: 'auto',
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: '10px',
+      marginRight: '10px',
+    },        
   }, 
   licanse: {
     marginTop: "35px",
-  }
+  },
+  searchInput: {
+    width: '100%',
+  },
 });

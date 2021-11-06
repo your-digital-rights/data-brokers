@@ -7,7 +7,6 @@ const Theme = (theme) => ({
   heading: {
     maxWidth: "850px !important",
     margin: "auto auto",
-
     [theme.breakpoints.down("sm")]: {
       marginTop: "-140px",
       paddingTop: "150px",
@@ -33,6 +32,9 @@ const Theme = (theme) => ({
     "&:hover": {
       background: "#04487B",
     },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: '35px',
+    },    
   },
   donateLPButton: {
     marginTop: "-25px",
@@ -49,7 +51,7 @@ const Theme = (theme) => ({
     },
   },
   intro: {
-    marginBottom: "50px",
+    marginBottom: "20px",
     maxWidth: "570px",
   },
   titleImg: {
@@ -57,11 +59,11 @@ const Theme = (theme) => ({
     maxWidth: "75%",
   },
   title: {
-    marginBottom: 0,
+    marginBottom: '10px',
   },
   buttons: {
     textAlign: "center",
-    marginBottom: "30px",
+    marginTop: "50px",
     [theme.breakpoints.up("sm")]: {
       textAlign: "left",
     },

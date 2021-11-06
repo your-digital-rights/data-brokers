@@ -93,10 +93,13 @@
     "message": "Contribute"
   },
   "donations.Bitcoin": {
-    "message": "Donate Bitcoin"
+    "message": "Bitcoin"
   },
   "donations.Liberapay": {
-    "message": "Donate via Liberapay"
+    "message": "Liberapay"
+  },
+  "donations.donateCTA": {
+    "message": "Please consider donating:"
   },
   "donations.donateIntro": {
     "message": "YourDigitalRights.org was created because we believe that privacy matters, and that exercising your right to privacy should be easy. That’s why we’ve made it free. Donations allow us to spend more time improving this service."
@@ -123,16 +126,16 @@
     "message": "make a wish on our roadmap"
   },
   "hero.headerText": {
-    "message": "Our goal is to curate the largest publicly available dataset of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations."
+    "message": "We curate the largest publicly available database of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations distributed across the world."
   },
   "hero.heading": {
     "message": "Data Brokers Watch"
   },
   "hero.subheading": {
-    "message": "Mapping the data broker ecosystem"
+    "message": "Tracking and mapping the data broker ecosystem"
   },
   "index.description": {
-    "message": "Data broker watch - track the trackers."
+    "message": "The largest publicly available dataset of data brokers made available to the wider research community."
   },
   "index.title": {
     "message": "Data Broker Watch"
@@ -219,7 +222,7 @@
     "message": "Do you want better control over who has access to your personal data? Our browser extension allows you to opt out of the websites you visit with a click of a button."
   },
   "social.facebookQuote": {
-    "message":       "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
+    "message": "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
   },
   "social.firefoxCTA": {
     "message": "Download it for Firefox"
@@ -231,7 +234,7 @@
     "message": "Please help us spread the word"
   },
   "social.twitterTitle": {
-    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it. Check out yourdigitalrights.org."
+    "message": "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
   },
   "usageData": {
     "message": "Usage Data"

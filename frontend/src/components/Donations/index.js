@@ -29,7 +29,15 @@ const Donations = ({ classes, children }) => {
               id="donations.donateIntro"
               defaultMessage="YourDigitalRights.org was created because we believe that privacy matters, and that exercising your right to privacy should be easy. That’s why we’ve made it free. Donations allow us to spend more time improving this service."
             />
-          </Typography>          
+          </Typography>      
+          <Typography color="inherit" className={classes.intro}>
+            <strong>
+            <FormattedMessage
+              id="donations.donateCTA"
+              defaultMessage="Please consider donating:"
+            />
+            </strong>
+          </Typography>        
           <div className={classes.buttons}>
             <Button
               variant="contained"
@@ -39,7 +47,7 @@ const Donations = ({ classes, children }) => {
               className={classes.donateLPButton}
               onClick={() => trackDonate("Donation - Librapay")}
             >
-              <FormattedMessage id="donations.Liberapay" defaultMessage="Donate via Liberapay" />
+              <FormattedMessage id="donations.Liberapay" defaultMessage="Liberapay" />
             </Button>                          
             <Button
               variant="contained"
@@ -49,7 +57,7 @@ const Donations = ({ classes, children }) => {
               className={classes.donateBTCButton}
               onClick={() => trackDonate("Donation - BTC")}
             >
-              <FormattedMessage id="donations.Bitcoin" defaultMessage="Donate Bitcoin" />
+              <FormattedMessage id="donations.Bitcoin" defaultMessage="Bitcoin" />
             </Button>
           </div>
           {children}
