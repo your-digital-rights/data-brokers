@@ -41,7 +41,7 @@ const RenderPopup = ({ dataBoker }) => {
 	return (
 		<div>
 			<img width={16} src={`https://api.faviconkit.com/${dataBoker['Domain']}/16`}/> 
-			<a href={dataBoker["Domain"]}>{dataBoker["Company Name"]}</a>
+			<a target="_blank" rel="nofollow" href={`https://${dataBoker["Domain"]}`}>{dataBoker["Company Name"]}</a>
 			<br/>
 			<strong>Industry Group:</strong> {dataBoker["Company Category Industry Group"]}
 			<br/>
