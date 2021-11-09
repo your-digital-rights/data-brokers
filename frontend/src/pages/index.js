@@ -37,7 +37,7 @@ function Index({ classes, router }) {
       const response = await fetchDataBrokers();
       response.Organizations.forEach(org => {
         if (org["Company Geo Lat"] && org["Company Geo Lng"]) {
-          org.latlng = [org["Company Geo Lat"],org["Company Geo Lng"]];
+          org.latlng = [parseFloat(org["Company Geo Lat"]),parseFloat(org["Company Geo Lng"])];
         }
       });
       setDataBrokers(response.Organizations);

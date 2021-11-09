@@ -15,5 +15,8 @@ export const Style = (theme) => ({
   },  
   markerclusterMap: {
     height: "90vh",
-  }  
+  },
+  markerLogo: {
+    marginRight: "10px",
+  } 
 });
