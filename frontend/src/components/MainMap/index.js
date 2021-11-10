@@ -20,7 +20,6 @@ function SetCenter({ coords }) {
 		return null;
 	}
 	const map = useMap();
-	console.log(coords);
 	if (coords) {
 		//map.fitBounds([coords,coords]);
 		map.setView(coords, 13, { 

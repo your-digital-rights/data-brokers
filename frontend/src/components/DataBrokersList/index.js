@@ -19,9 +19,8 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     minWidth: 100,
     resizable: true,
   };
-  var gridApi = null;
-  var gridColumnApi = null;
   const [coords, setCoords] = React.useState([25, 10]);
+  const gridRef = useRef(null);
 
   const DomainCellRenderer = params => {
     const domain = params.value.charAt(0).toUpperCase() + params.value.slice(1);
@@ -47,18 +46,6 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
       return null;
     }
   };
-
-  const onGridReady = params => {
-    gridApi = params.api;
-    gridColumnApi = params.columnApi;
-  };
-
-  const onButtonClick = e => {
-    const selectedNodes = this.gridApi.getSelectedNodes()
-    const selectedData = selectedNodes.map( node => node.data )
-    const selectedDataStringPresentation = selectedData.map( node => node).join(', ')
-    alert(`Selected nodes: ${selectedDataStringPresentation}`)
-  }
   
   const onExportButtonClick = e => {
     var today = new Date();
@@ -67,15 +54,15 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     var yyyy = today.getFullYear();
     today = dd + '-' + mm + '-' + yyyy;
     var fileName = "data-brokers-" + today + ".csv";
-    gridApi.exportDataAsCsv({fileName: fileName});
+    gridRef.current.api.exportDataAsCsv({fileName: fileName});
   }
 
   const onQuickFilterChanged = () => {
-    gridApi.setQuickFilter(document.getElementById('quickFilter').value);
+    gridRef.current.api.setQuickFilter(document.getElementById('quickFilter').value);
   };
 
   const onFirstDataRendered = (params) => {
-    params.api.sizeColumnsToFit();
+    gridRef.current.api.sizeColumnsToFit();
   };
 
   const onGridSizeChanged = (params) => {
@@ -83,7 +70,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     var columnsToShow = [];
     var columnsToHide = [];
     var totalColsWidth = 0;
-    var allColumns = params.columnApi.getAllColumns();
+    var allColumns = gridRef.current.columnApi.getAllColumns();
     for (var i = 0; i < allColumns.length; i++) {
       var column = allColumns[i];
       totalColsWidth += column.getMinWidth();
@@ -93,9 +80,9 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
         columnsToShow.push(column.colId);
       }
     }
-    params.columnApi.setColumnsVisible(columnsToShow, true);
-    params.columnApi.setColumnsVisible(columnsToHide, false);
-    params.api.sizeColumnsToFit();
+    gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
+    gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
+    gridRef.current.api.sizeColumnsToFit();
   };
 
   const Map = dynamic(
@@ -128,7 +115,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
             }}
           >
             <AgGridReact
-              onGridReady={ params => gridApi = params.api }
+              ref={gridRef}
               rowData={dataBrokers}
               rowSelection="single"
               onRowClicked={onRowClick}
@@ -137,13 +124,13 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
                 sortable: true,
                 resizable: true,
               }}
-              onGridReady={onGridReady}
               frameworkComponents={{
                 optOutCellRenderer: OptOutCellRenderer,
                 countryCellRenderer: CountryCellRenderer,
               }}
               onFirstDataRendered={onFirstDataRendered}
               onGridSizeChanged={onGridSizeChanged}
+              reactUi={true}
             >
               <AgGridColumn field="Domain" headerName="Domain" minWidth={150} cellRenderer={DomainCellRenderer}></AgGridColumn>
               <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" minWidth={95} maxWidth={110} ></AgGridColumn>
