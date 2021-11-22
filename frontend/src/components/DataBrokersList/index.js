@@ -24,7 +24,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
 
   const DomainCellRenderer = params => {
     const domain = params.value.charAt(0).toUpperCase() + params.value.slice(1);
-    return "<img style='vertical-align: middle' width='20px' src='https://api.faviconkit.com/" + params.value + "/20'/><span style='padding-left: 10px' >" + domain + "</span>";
+    return "<img style='vertical-align: middle' width='20px' src='//logo.clearbit.com/" + params.value + "?size=20'/><span style='padding-left: 10px' >" + domain + "</span>";
   };
   
   const CountryCellRenderer = params => {

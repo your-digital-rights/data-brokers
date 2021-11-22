@@ -75,7 +75,7 @@ const OrgMarkers = (props) => {
 const RenderPopup = ({ dataBroker, classes }) => {
 	return (
 		<div>
-			<img className={classes.markerLogo} width={16} src={`https://api.faviconkit.com/${dataBroker['Domain']}/16`}/> 
+			<img className={classes.markerLogo} width={16} src={`//logo.clearbit.com/${dataBroker['Domain']}?size=16`}/> 
 			<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>{dataBroker["Company Name"]}</a>
 			<br/>
 			<strong>Industry Group:</strong> {dataBroker["Company Category Industry Group"]}
