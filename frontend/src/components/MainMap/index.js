@@ -78,9 +78,9 @@ const RenderPopup = ({ dataBroker, classes }) => {
 			<img className={classes.markerLogo} width={16} src={`//logo.uplead.com/${dataBroker['Domain']}`}/> 
 			<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>{dataBroker["Company Name"]}</a>
 			<br/>
-			<strong>Industry Group:</strong> {dataBroker["Company Category Industry Group"]}
-			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}
+			<br/>
+			<strong>Sub Industry:</strong> {dataBroker["Company Category Sub Industry"]}
 			<br/>
 			{ dataBroker["Company Type"].length > 0 && (
 				<>
