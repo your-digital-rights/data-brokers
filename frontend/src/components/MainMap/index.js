@@ -75,14 +75,44 @@ const OrgMarkers = (props) => {
 const RenderPopup = ({ dataBroker, classes }) => {
 	return (
 		<div>
-			<img className={classes.markerLogo} width={16} src={`//logo.clearbit.com/${dataBroker['Domain']}?size=16`}/> 
+			<img className={classes.markerLogo} width={16} src={`//logo.uplead.com/${dataBroker['Domain']}`}/> 
 			<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>{dataBroker["Company Name"]}</a>
 			<br/>
 			<strong>Industry Group:</strong> {dataBroker["Company Category Industry Group"]}
 			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}
 			<br/>
+			{ dataBroker["Company Type"].length > 0 && (
+				<>
+					<strong>Type:</strong> {dataBroker["Company Type"]}
+					<br/>
+				</>
+			)}	
+			{ dataBroker["Company Metrics Employees"].length > 0 && (
+				<>
+					<strong>Employees:</strong> {dataBroker["Company Metrics Employees"]}			
+					<br/>
+				</>
+			)}
+			{ dataBroker["Company Metrics Estimated Annual Revenue"].length > 0 && (
+				<>			
+					<strong>Estimated Annual Revenue:</strong> {dataBroker["Company Metrics Estimated Annual Revenue"]}						
+					<br/>
+					</>
+			)}
+			{ dataBroker["Company Founded Year"].length > 0 && (
+				<>						
+					<strong>Founded:</strong> {dataBroker["Company Founded Year"]}						
+					<br/>
+					</>
+			)}
 			<strong>Description:</strong> {dataBroker["Company Description"]}
+			<br/>
+			{ dataBroker["Company Tags"].length > 0 && (
+				<>									
+					<strong>Tags:</strong> {dataBroker["Company Tags"]}
+					</>
+			)}
 		</div>
 	);
 };

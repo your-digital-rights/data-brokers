@@ -51,7 +51,7 @@ const Theme = (theme) => ({
     },
   },
   intro: {
-    marginBottom: "20px",
+    marginBottom: "50px",
     maxWidth: "570px",
   },
   titleImg: {
@@ -59,11 +59,11 @@ const Theme = (theme) => ({
     maxWidth: "75%",
   },
   title: {
-    marginBottom: '10px',
+    marginBottom: 0,
   },
   buttons: {
     textAlign: "center",
-    marginTop: "50px",
+    marginBottom: "30px",
     [theme.breakpoints.up("sm")]: {
       textAlign: "left",
     },
