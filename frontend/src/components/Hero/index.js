@@ -44,7 +44,7 @@ const Hero = ({ classes, dataBrokers, children }) => {
           >
             <FormattedMessage
               id="hero.headerText"
-              defaultMessage="We curate the largest publicly available database of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations distributed across the world."
+              defaultMessage="We curate the largest publicly available database of data brokers and make it available to the wider research community. The full dataset currently includes up to 60+ data points on {num} organizations distributed across the globe."
               values={{
                 num: dbCount
               }}
