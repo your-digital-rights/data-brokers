@@ -75,6 +75,7 @@ const styles = (theme) => ({
 
 const dataBrokers = [
   { domain: "acxiom.com", name: "Acxiom" },
+  { domain: "clearview.ai", name: "Clearview.ai" },
   { domain: "epsilon.com", name: "Epsilon" },
   { domain: "equifax.com", name: "Equifax" },
   { domain: "experian.com", name: "Experian" },
@@ -83,7 +84,6 @@ const dataBrokers = [
   { domain: "tapad.com", name: "Tapad" },
   { domain: "towerdata.com", name: "TowerData" },
   { domain: "transunion.com", name: "TransUnion" },
-  { domain: "quantcast.com", name: "Quantcast" },
 ];
 
 
@@ -125,7 +125,7 @@ const Brokers = ({ classes, router }) => {
                 {dataBrokers.map((company) => (
                   <Grid key={company.domain} item>
                     <Paper className={classes.paper} elevation={2} >
-                      <Link href={"/d/" + company.domain} passHref> 
+                      <Link href={"https://yourdigitalrights.org/d/" + company.domain} passHref> 
                         <GridListTile
                           component="a"
                           href={"/d/" + company.domain}
