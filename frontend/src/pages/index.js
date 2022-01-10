@@ -40,7 +40,7 @@ function Index({ classes, router }) {
           org.latlng = [parseFloat(org["Company Geo Lat"]),parseFloat(org["Company Geo Lng"])];
         }
       });
-      setDataBrokers(response.Organizations);
+      setDataBrokers(response.DataBrokers);
     };
     fetchData();
   });
