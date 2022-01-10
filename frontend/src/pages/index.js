@@ -35,7 +35,7 @@ function Index({ classes, router }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchDataBrokers();
-      response.Organizations.forEach(org => {
+      response.DataBrokers.forEach(org => {
         if (org["Company Geo Lat"] && org["Company Geo Lng"]) {
           org.latlng = [parseFloat(org["Company Geo Lat"]),parseFloat(org["Company Geo Lng"])];
         }

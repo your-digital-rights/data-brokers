@@ -16,14 +16,6 @@ const EXCLUDE_LIST = [
 
 const HEALTH_FIELD_NAME = 'Health';
 
-function compare(a,b) {
-  if (a.domain < b.domain)
-    return -1;
-  if (a.domain > b.domain)
-    return 1;
-  return 0;
-};
-
 function generateIndexFromHeaders(headerRow) {
   var FIELDS = {};
   for (var i = 0; i < headerRow.length; i++) {
@@ -39,7 +31,6 @@ function getHealthFieldIndex(headerRow) {
       }
   };  
 }
-
 
 async function fetchDataBrokers() {
   try {
@@ -62,7 +53,7 @@ async function fetchDataBrokers() {
       };
       results.push(row);
     };
-    return {"License": "GNU General Public License v3.0", "Data-brokers": results};
+    return {"License": "GNU General Public License v3.0", "DataBrokers": results};
   } 
   catch (e) {
     console.log(e);
