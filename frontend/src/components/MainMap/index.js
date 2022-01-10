@@ -4,73 +4,94 @@ import 'leaflet/dist/leaflet.css'
 import { Style as styles } from "./styles";
 import { withStyles } from "@material-ui/core/styles";
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
 
-function arrayEquals(a, b) {
-	return Array.isArray(a) &&
-			Array.isArray(b) &&
-			a.length === b.length &&
-			a.every((val, index) => val === b[index]);
-}
+const Map = ({ classes, dataBrokers, selectedDataBroker }) => {
+	let mapRef = React.useRef(null);
+	let markerGroupRef = React.useRef(null);
+	const markerRefs = React.useRef({});
+	const dataBrokersWithLocation = dataBrokers.filter((dataBroker) => dataBroker.latlng && dataBroker.latlng.length > 0);
 
-function SetCenter({ coords }) {
-	if (arrayEquals(coords, [25, 10])) {
-		return null;
-	}
-	const map = useMap();
-	if (coords) {
-		//map.fitBounds([coords,coords]);
-		map.setView(coords, 13, { 
-			animate: true,
-			pan: {
-				duration: 20
-			}
-		});	
-	};
-  return null;
-}
+	React.useEffect(() => {
+		if (selectedDataBroker) {
+			let marker = markerRefs.current[selectedDataBroker.Domain];
+			console.log('marker',marker);
+			console.log('markerRefs.current',markerRefs.current);
+			console.log('selectedDataBroker.Domain',selectedDataBroker.Domain);
+			console.log('markerRefs.current[selectedDataBroker.Domain]',markerRefs.current[selectedDataBroker.Domain]);
+			console.log('selectedDataBroker',selectedDataBroker);
+			console.log('markerGroupRef',markerGroupRef);
+			markerGroupRef.current.leafletElement.zoomToShowLayer(marker, function () {
+				marker.openPopup();
+			});
+		}
+	}, [selectedDataBroker]);
 
-const Map = ({ classes, dataBrokers, coords }) => {
 	return (
-		<div className={classes.root} id="mainMap">			
-			<MapContainer center={[25, 10]} zoom={2} scrollWheelZoom={false} style={{ height: 400, width: "100%" }}>
+		<div className={classes.root} id="mainMap">		
+			{dataBrokers.length === 0 && (
+				<div className={classes.progressContainer}>
+						<CircularProgress className={classes.progress} size={100}/>
+				</div>
+			)}
+			<MapContainer center={[25, 10]} zoom={2} scrollWheelZoom={false} style={{ height: 400, width: "100%" }} ref={mapRef}>
 				<TileLayer
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
 				/>
-				<MarkerClusterGroup >
-					<OrgMarkers dataBrokers={dataBrokers} classes={classes} />
+				<MarkerClusterGroup ref={el => markerGroupRef = el}>
+					{dataBrokersWithLocation.map((dataBroker) => (
+						<Marker 
+							key={dataBroker.Domain} 
+							ref={el => markerRefs.current[dataBroker.Domain] = el}
+							position={dataBroker.latlng} 
+						>
+							<Popup>
+								<RenderPopup dataBroker={dataBroker} classes={classes}/>
+							</Popup>
+						</Marker>
+					))}
 				</MarkerClusterGroup>
-				<SetCenter coords={coords} />
 			</MapContainer>
 		</div>
 	);
 };
 
-const OrgMarkers = (props) => {
-  const { dataBrokers, classes } = props;
-	if (dataBrokers) {
-		const markers = dataBrokers.map((dataBroker, index) => (
-			<>
-				{dataBroker && dataBroker.latlng && dataBroker.latlng.length >0 && (
-					<Marker 
-						key={dataBroker.domain} 
-						position={dataBroker.latlng} 
-					>
+const DataBrokerMarkers = ({dataBrokers, classes, selectedDataBroker}) => {
+	const markerRefs = React.useRef({});
+	const map = useMap();
+
+	React.useEffect(() => {
+		if (selectedDataBroker) {
+			markerRefs.current[selectedDataBroker.Domain].openPopup();
+			map.flyTo(selectedDataBroker.latlng, 13, { 
+				animate: true,
+				pan: {
+					duration: 20
+				}
+			});
+		}
+	}, [selectedDataBroker]);
+
+	return (
+		<div>
+			{dataBrokers.map((dataBroker) => (
+				<Marker 
+					key={dataBroker.Domain} 
+					ref={el => markerRefs.current[dataBroker.Domain] = el}
+					position={dataBroker.latlng} 
+				>
 					<Popup>
 						<RenderPopup dataBroker={dataBroker} classes={classes}/>
 					</Popup>
-					</Marker>
-				)}
-			</>
-		));
-		return <>{markers}</>;
-	};
-	return null;
+				</Marker>
+			))}
+		</div>
+	)
 };
-
 
 const RenderPopup = ({ dataBroker, classes }) => {
 	return (

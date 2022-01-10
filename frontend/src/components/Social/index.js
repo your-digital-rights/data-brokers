@@ -260,7 +260,7 @@ const Social = ({
       >
         <FormattedMessage
           id="social.shareHeading"
-          defaultMessage="Please help us spread the word"
+          defaultMessage="Like this project? Help others find it."
         />
       </Typography>
 

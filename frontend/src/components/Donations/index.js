@@ -27,17 +27,12 @@ const Donations = ({ classes, children }) => {
           <Typography color="inherit" className={classes.intro}>
             <FormattedMessage
               id="donations.donateIntro"
-              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
+              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back. <strong>Please consider donating:</strong>"
+              values={{
+                strong: (chunks) => <strong>{chunks}</strong>,
+              }}
             />
           </Typography>      
-          <Typography color="inherit" className={classes.intro}>
-            <strong>
-            <FormattedMessage
-              id="donations.donateCTA"
-              defaultMessage="Please consider donating:"
-            />
-            </strong>
-          </Typography>        
           <div className={classes.buttons}>
             <Button
               variant="contained"

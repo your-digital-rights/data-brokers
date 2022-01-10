@@ -62,7 +62,7 @@ async function fetchDataBrokers() {
       };
       results.push(row);
     };
-    return {"License": "GNU General Public License v3.0", "Organizations": results};
+    return {"License": "GNU General Public License v3.0", "Data-brokers": results};
   } 
   catch (e) {
     console.log(e);

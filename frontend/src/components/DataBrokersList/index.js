@@ -13,13 +13,17 @@ import dynamic from 'next/dynamic'
 
 
 const DataBrokersDB = ({ classes, dataBrokers }) => {
+  const DataBrokerContext = React.createContext({
+    selectedDataBroker: null,
+  });
+
   const defaultColDef = {
     flex: 1,
     sortable: true,
     minWidth: 100,
     resizable: true,
   };
-  const [coords, setCoords] = React.useState([25, 10]);
+  const [selectedDataBroker, setSelectedDataBroker] = React.useState(null);
   const gridRef = useRef(null);
 
   const DomainCellRenderer = params => {
@@ -91,17 +95,11 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
       ssr: false 
     } // This line is important. It's what prevents server-side render
   );
-
-  const onRowClick = (e) => {
-    if (e.data.latlng) {
-      setCoords(e.data.latlng);
-    }
-  }
   
   return (
     <div className={classes.container}>
       <Paper className={classes.inner}>
-      <Map dataBrokers={dataBrokers} coords={coords}/>
+        <Map dataBrokers={dataBrokers} selectedDataBroker={selectedDataBroker} />
         <div className={classes.database}>
           <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
             <SearchIcon />
@@ -118,7 +116,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
               ref={gridRef}
               rowData={dataBrokers}
               rowSelection="single"
-              onRowClicked={onRowClick}
+              onRowClicked={(e) => setSelectedDataBroker(e.data)}
               defaultColDef={{
                 flex: 1,
                 sortable: true,

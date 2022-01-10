@@ -92,17 +92,29 @@
   "contribute.title": {
     "message": "Contribute"
   },
+  "data-brokers.DBAboutTitle": {
+    "message": "Opt Out of the Top Data Brokers"
+  },
+  "data-brokers.brokersIntro": {
+    "message": "These are some of the top data brokers, click an organization to send a data deletion request."
+  },
+  "data-brokers.description": {
+    "message": "Get the top data brokers to erase your personal data"
+  },
+  "data-brokers.searchButton": {
+    "message": "View All Data Brokers"
+  },
+  "data-brokers.title": {
+    "message": "Opt Out of the Top Data Brokers"
+  },
   "donations.Bitcoin": {
     "message": "Bitcoin"
   },
   "donations.Liberapay": {
     "message": "Liberapay"
   },
-  "donations.donateCTA": {
-    "message": "Please consider donating:"
-  },
   "donations.donateIntro": {
-    "message": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
+    "message": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back. <strong>Please consider donating:</strong>"
   },
   "donations.headingDonate": {
     "message": "We need your support"
@@ -151,6 +163,9 @@
   },
   "nav.privacyPoilcy": {
     "message": "Privacy Policy"
+  },
+  "nav.top10": {
+    "message": "Top 10"
   },
   "nav.whyDataBrokers": {
     "message": "Why data brokers?"
@@ -231,7 +246,7 @@
     "message": "FireFox Extention"
   },
   "social.shareHeading": {
-    "message": "Please help us spread the word"
+    "message": "Like this project? Help others find it."
   },
   "social.twitterTitle": {
     "message": "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"

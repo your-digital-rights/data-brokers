@@ -49,6 +49,13 @@ const NavListDesktop = ({ classes, router, handleLangChange }) => {
   return (
     <ul className={classes.container}>
       <NavItem
+        href="/data-brokers"
+        text={
+          <FormattedMessage id="nav.top10" defaultMessage="Top 10" />
+        }
+        classes={classes}
+      />
+      <NavItem
         href="/#whyDataBrokers"
         text={
           <FormattedMessage id="nav.whyDataBrokers" defaultMessage="Why data brokers?" />

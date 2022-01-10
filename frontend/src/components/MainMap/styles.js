@@ -18,5 +18,15 @@ export const Style = (theme) => ({
   },
   markerLogo: {
     marginRight: "10px",
+  },
+  progressContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  progress: { 
+    position: "absolute",
+    color: "#1a90ff",
+    zIndex: "1000",
+    top: "5%",
   } 
 });

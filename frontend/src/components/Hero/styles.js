@@ -64,7 +64,7 @@ const Theme = (theme) => ({
     "&:hover": {
       textDecoration: "underline"
     }
-  }
+  },
 });
 
 export default Theme;

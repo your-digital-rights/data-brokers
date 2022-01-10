@@ -281,6 +281,36 @@
       "value": "Contribute"
     }
   ],
+  "data-brokers.DBAboutTitle": [
+    {
+      "type": 0,
+      "value": "Opt Out of the Top Data Brokers"
+    }
+  ],
+  "data-brokers.brokersIntro": [
+    {
+      "type": 0,
+      "value": "These are some of the top data brokers, click an organization to send a data deletion request."
+    }
+  ],
+  "data-brokers.description": [
+    {
+      "type": 0,
+      "value": "Get the top data brokers to erase your personal data"
+    }
+  ],
+  "data-brokers.searchButton": [
+    {
+      "type": 0,
+      "value": "View All Data Brokers"
+    }
+  ],
+  "data-brokers.title": [
+    {
+      "type": 0,
+      "value": "Opt Out of the Top Data Brokers"
+    }
+  ],
   "donations.Bitcoin": [
     {
       "type": 0,
@@ -293,16 +323,20 @@
       "value": "Liberapay"
     }
   ],
-  "donations.donateCTA": [
-    {
-      "type": 0,
-      "value": "Please consider donating:"
-    }
-  ],
   "donations.donateIntro": [
     {
       "type": 0,
-      "value": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
+      "value": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back. "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "Please consider donating:"
+        }
+      ],
+      "type": 8,
+      "value": "strong"
     }
   ],
   "donations.headingDonate": [
@@ -449,6 +483,12 @@
     {
       "type": 0,
       "value": "Privacy Policy"
+    }
+  ],
+  "nav.top10": [
+    {
+      "type": 0,
+      "value": "Top 10"
     }
   ],
   "nav.whyDataBrokers": [
@@ -626,7 +666,7 @@
   "social.shareHeading": [
     {
       "type": 0,
-      "value": "Please help us spread the word"
+      "value": "Like this project? Help others find it."
     }
   ],
   "social.twitterTitle": [
