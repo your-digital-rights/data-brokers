@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer, useMap} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Style as styles } from "./styles";
 import { withStyles } from "@material-ui/core/styles";
@@ -9,27 +9,8 @@ import 'react-leaflet-markercluster/dist/styles.min.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
 
-const Map = ({ classes, dataBrokers, selectedDataBroker }) => {
-	let mapRef = React.useRef(null);
-	let markerGroupRef = React.useRef(null);
-	const markerRefs = React.useRef({});
-	const dataBrokersWithLocation = dataBrokers.filter((dataBroker) => dataBroker.latlng && dataBroker.latlng.length > 0);
-
-	React.useEffect(() => {
-		if (selectedDataBroker) {
-			let marker = markerRefs.current[selectedDataBroker.Domain];
-			console.log('marker',marker);
-			console.log('markerRefs.current',markerRefs.current);
-			console.log('selectedDataBroker.Domain',selectedDataBroker.Domain);
-			console.log('markerRefs.current[selectedDataBroker.Domain]',markerRefs.current[selectedDataBroker.Domain]);
-			console.log('selectedDataBroker',selectedDataBroker);
-			console.log('markerGroupRef',markerGroupRef);
-			markerGroupRef.current.leafletElement.zoomToShowLayer(marker, function () {
-				marker.openPopup();
-			});
-		}
-	}, [selectedDataBroker]);
-
+const Map = (props) => {
+	const { classes, dataBrokers } = props;
 	return (
 		<div className={classes.root} id="mainMap">		
 			{dataBrokers.length === 0 && (
@@ -37,58 +18,40 @@ const Map = ({ classes, dataBrokers, selectedDataBroker }) => {
 						<CircularProgress className={classes.progress} size={100}/>
 				</div>
 			)}
-			<MapContainer center={[25, 10]} zoom={2} scrollWheelZoom={false} style={{ height: 400, width: "100%" }} ref={mapRef}>
+			<MapContainer center={[25, 10]} zoom={2} scrollWheelZoom={false} style={{ height: 400, width: "100%" }}>
 				<TileLayer
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
 				/>
-				<MarkerClusterGroup ref={el => markerGroupRef = el}>
-					{dataBrokersWithLocation.map((dataBroker) => (
-						<Marker 
-							key={dataBroker.Domain} 
-							ref={el => markerRefs.current[dataBroker.Domain] = el}
-							position={dataBroker.latlng} 
-						>
-							<Popup>
-								<RenderPopup dataBroker={dataBroker} classes={classes}/>
-							</Popup>
-						</Marker>
-					))}
-				</MarkerClusterGroup>
+				<DataBrokersGroup {...props} />
 			</MapContainer>
 		</div>
 	);
 };
 
-const DataBrokerMarkers = ({dataBrokers, classes, selectedDataBroker}) => {
-	const markerRefs = React.useRef({});
+const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 	const map = useMap();
+	const groupRef = React.useRef(null);
+	const markerRefs = React.useRef({});
+	const dataBrokersWithLocation = dataBrokers.filter((dataBroker) => dataBroker.latlng && dataBroker.latlng.length > 0);
 
-	React.useEffect(() => {
-		if (selectedDataBroker) {
-			markerRefs.current[selectedDataBroker.Domain].openPopup();
-			map.flyTo(selectedDataBroker.latlng, 13, { 
-				animate: true,
-				pan: {
-					duration: 20
-				}
-			});
-		}
-	}, [selectedDataBroker]);
+
 
 	return (
 		<div>
-			{dataBrokers.map((dataBroker) => (
-				<Marker 
-					key={dataBroker.Domain} 
-					ref={el => markerRefs.current[dataBroker.Domain] = el}
-					position={dataBroker.latlng} 
-				>
-					<Popup>
-						<RenderPopup dataBroker={dataBroker} classes={classes}/>
-					</Popup>
-				</Marker>
-			))}
+			<MarkerClusterGroup ref={groupRef}>
+				{dataBrokersWithLocation.map((dataBroker) => (
+					<Marker 
+						key={dataBroker.Domain} 
+						ref={el => markerRefs.current[dataBroker.Domain] = el}
+						position={dataBroker.latlng} 
+					>
+						<Popup>
+							<RenderPopup dataBroker={dataBroker} classes={classes}/>
+						</Popup>
+					</Marker>
+				))}
+			</MarkerClusterGroup>
 		</div>
 	)
 };
