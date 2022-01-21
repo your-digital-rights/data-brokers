@@ -28,5 +28,13 @@ export const Style = (theme) => ({
     color: "#1a90ff",
     zIndex: "1000",
     top: "5%",
-  } 
+  },
+  renderGroupTitle: {
+    marginBottom: "-15px",
+    display: "flex",
+  },
+  optoutBtn: {
+    marginTop: "10px",
+    width: "100%",
+  }
 });

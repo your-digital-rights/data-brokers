@@ -8,6 +8,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const Map = (props) => {
 	const { classes, dataBrokers } = props;
@@ -75,8 +77,9 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 const RenderPopup = ({ dataBroker, classes }) => {
 	return (
 		<div>
-			<img className={classes.markerLogo} width={16} src={`//logo.uplead.com/${dataBroker['Domain']}`}/> 
-			<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>{dataBroker["Company Name"]}</a>
+			<Typography component="span" variant="h5" className={classes.renderGroupTitle}>
+				<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}><img className={classes.markerLogo} width={24} src={`//logo.uplead.com/${dataBroker['Domain']}`}/>{dataBroker["Company Name"]}</a>
+			</Typography>	
 			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}
 			<br/>
@@ -110,9 +113,25 @@ const RenderPopup = ({ dataBroker, classes }) => {
 			<br/>
 			{ dataBroker["Company Tags"].length > 0 && (
 				<>									
+					<hr/>
 					<strong>Tags:</strong> {dataBroker["Company Tags"]}
-					</>
+				</>
 			)}
+			{ dataBroker["YDR URL"].length > 0 && (
+				<>	
+					<br/>								
+					<Button
+            href={dataBroker["YDR URL"]}
+						target="_blank"
+            variant="outlined"
+            color="promary"
+            type="submit"
+            className={classes.optoutBtn}
+          >
+            Opt Out
+          </Button>
+				</>
+			)}			
 		</div>
 	);
 };
