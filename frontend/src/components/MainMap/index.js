@@ -32,10 +32,30 @@ const Map = (props) => {
 const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 	const map = useMap();
 	const groupRef = React.useRef(null);
-	const markerRefs = React.useRef({});
 	const dataBrokersWithLocation = dataBrokers.filter((dataBroker) => dataBroker.latlng && dataBroker.latlng.length > 0);
 
+	const [markers, setMarkers] = React.useState({})
 
+	const markersRef = React.useCallback((dataBroker, marker) => {
+		if (!markers.hasOwnProperty(dataBroker.Domain)) {
+			markers[dataBroker.Domain] = marker;
+			console.log("adding markers", markers);
+		}
+	}, [selectedDataBroker]);
+
+	React.useEffect(() => {
+		if (selectedDataBroker) {
+			console.log("markers", markers);
+			const marker = markers[selectedDataBroker.Domain];
+			console.log("marker", marker);
+			if (groupRef.current !== null && marker) {
+				console.log("groupRef.current", groupRef.current);
+				groupRef.current.zoomToShowLayer(marker, function () {
+					marker.openPopup();
+				});
+			}
+		}
+	}, [selectedDataBroker]);
 
 	return (
 		<div>
@@ -43,7 +63,7 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 				{dataBrokersWithLocation.map((dataBroker) => (
 					<Marker 
 						key={dataBroker.Domain} 
-						ref={el => markerRefs.current[dataBroker.Domain] = el}
+						ref={el => markersRef(dataBroker, el)}
 						position={dataBroker.latlng} 
 					>
 						<Popup>

@@ -9,21 +9,15 @@ import styles from "./styles";
 import CancelScheduleSendIcon from '@material-ui/icons/CancelScheduleSend';
 import IconButton from '@material-ui/core/IconButton';
 import ReactCountryFlag from "react-country-flag";
-import dynamic from 'next/dynamic'
 
 
-const DataBrokersDB = ({ classes, dataBrokers }) => {
-  const DataBrokerContext = React.createContext({
-    selectedDataBroker: null,
-  });
-
+const DataBrokersList = ({ classes, dataBrokers, setSelectedDataBroker }) => {
   const defaultColDef = {
     flex: 1,
     sortable: true,
     minWidth: 100,
     resizable: true,
   };
-  const [selectedDataBroker, setSelectedDataBroker] = React.useState(null);
   const gridRef = useRef(null);
 
   const DomainCellRenderer = params => {
@@ -88,18 +82,10 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
     gridRef.current.api.sizeColumnsToFit();
   };
-
-  const Map = dynamic(
-    () => import("../MainMap"), 
-    { 
-      ssr: false 
-    } // This line is important. It's what prevents server-side render
-  );
   
   return (
     <div className={classes.container}>
       <Paper className={classes.inner}>
-        <Map dataBrokers={dataBrokers} selectedDataBroker={selectedDataBroker} />
         <div className={classes.database}>
           <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
             <SearchIcon />
@@ -157,4 +143,4 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
   );
 }
 
-export default withStyles(styles)(DataBrokersDB);
+export default withStyles(styles)(DataBrokersList);

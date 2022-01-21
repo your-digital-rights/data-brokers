@@ -11,7 +11,8 @@ import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { NextSeo } from 'next-seo';
 import { withRouter } from "next/router";
 import fetchDataBrokers from "../utils/sheets";
-import DataBrokersDB from "../components/DataBrokersList";  
+import DataBrokersList from "../components/DataBrokersList";  
+import dynamic from 'next/dynamic'
 
 const styles = (theme) => ({
   topOfPagePlaceholder: {
@@ -31,6 +32,7 @@ function Index({ classes, router }) {
   const intl = useIntl();
   const BaseURL = "";
   const Description = intl.formatMessage({id: "index.description", defaultMessage: "The largest publicly available dataset of data brokers made available to the wider research community."});
+  const [selectedDataBroker, setSelectedDataBroker] = React.useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +46,13 @@ function Index({ classes, router }) {
     };
     fetchData();
   });
+
+  const Map = dynamic(
+    () => import("../components/MainMap"), 
+    { 
+      ssr: false 
+    } // This line is important. It's what prevents server-side render
+  );
 
   return (
     <div>
@@ -59,7 +68,8 @@ function Index({ classes, router }) {
       <Nav />
       <div className={classes.mainContainer}>
         <Hero dataBrokers={dataBrokers}/>
-        <DataBrokersDB dataBrokers={dataBrokers} />
+        <Map dataBrokers={dataBrokers} selectedDataBroker={selectedDataBroker} />
+        <DataBrokersList dataBrokers={dataBrokers} setSelectedDataBroker={setSelectedDataBroker} />
         <AboutDataBrokers />
         <Social />
         <Donations />
