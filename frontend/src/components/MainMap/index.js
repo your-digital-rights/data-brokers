@@ -117,7 +117,7 @@ const RenderPopup = ({ dataBroker, classes }) => {
 					<strong>Tags:</strong> {dataBroker["Company Tags"]}
 				</>
 			)}
-			{ dataBroker["YDR URL"].length > 0 && (
+			{ dataBroker.hasOwnProperty("YDR URL") && dataBroker["YDR URL"].length > 0 && (
 				<>	
 					<br/>								
 					<Button
