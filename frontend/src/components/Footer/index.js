@@ -61,7 +61,7 @@ const styles = (theme) => ({
     },
   },
   VercelLogo: {
-    height: "2.4em",
+    height: "2.4em",  
     marginTop: "5px",
   }  
 });
