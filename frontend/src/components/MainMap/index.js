@@ -39,17 +39,13 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 	const markersRef = React.useCallback((dataBroker, marker) => {
 		if (!markers.hasOwnProperty(dataBroker.Domain)) {
 			markers[dataBroker.Domain] = marker;
-			console.log("adding markers", markers);
 		}
 	}, [selectedDataBroker]);
 
 	React.useEffect(() => {
 		if (selectedDataBroker) {
-			console.log("markers", markers);
 			const marker = markers[selectedDataBroker.Domain];
-			console.log("marker", marker);
 			if (groupRef.current !== null && marker) {
-				console.log("groupRef.current", groupRef.current);
 				groupRef.current.zoomToShowLayer(marker, function () {
 					marker.openPopup();
 				});
