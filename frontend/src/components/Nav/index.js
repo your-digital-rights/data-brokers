@@ -49,7 +49,7 @@ const NavListDesktop = ({ classes, router, handleLangChange }) => {
   return (
     <ul className={classes.container}>
       <NavItem
-        href="/data-brokers"
+        href="/top-ten"
         text={
           <FormattedMessage id="nav.top10" defaultMessage="Top 10" />
         }
@@ -103,6 +103,14 @@ const NavListMobile = ({ classes, mobileNavOpen, toggleMobileNav, router, handle
       )}
     >
       <ul className={classes.mobileList}>
+      <NavItem
+          onClickHandler={toggleMobileNav}
+          href="/top-ten"
+          text={
+            <FormattedMessage id="nav.top10" defaultMessage="Top 10" />
+          }
+          classes={classes}
+        />        
       <NavItem
           onClickHandler={toggleMobileNav}
           href="/#whyDataBrokers"

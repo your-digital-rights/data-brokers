@@ -62,7 +62,7 @@ const styles = (theme) => ({
   },
   VercelLogo: {
     height: "2.4em",
-    marginTop: "15px",
+    marginTop: "5px",
   }  
 });
 
@@ -131,7 +131,15 @@ const Footer = ({ classes }) => {
               }}
             />
           </Typography> 
-          <a className={classes.DisclaimerLink} target="_blank" rel="nofollow" href="//logo.uplead.com/">Logos by Uplead</a>
+          <Typography component="p" variant="subtitle1">
+            <FormattedMessage
+              id="footer.logos"
+              defaultMessage="<a>Logos by Uplead</a>"
+              values={{
+                a: txt=> (<Link href="/about" ><a href="//logo.uplead.com/" rel="nofollow"  className={classes.DisclaimerLink}>{txt}</a></Link>)
+              }}
+            />
+          </Typography> 
           <a            
             href="https://vercel.com?utm_source=Conscious%20Digital&utm_campaign=oss"
           >
