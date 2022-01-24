@@ -51,13 +51,13 @@ const About = ({ classes, router }) => {
       <Nav />
       <div className={classes.container}>
         <Paper className={classes.inner} elevation={2} >
-          <Typography component="h1" variant="h4" gutterBottom={true}>
+          <Typography component="h1" variant="h4" gutterBottom={false}>
             <FormattedMessage id="about.aboutTitle" defaultMessage="Our mission" />
           </Typography>
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.missionBody1"
-              defaultMessage="DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital experiences."
+              defaultMessage="DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation, and the addictive nature of digital experiences."
               values={{
                 gdpr: (
                   <a target="_blank" href="https://gdpr.eu/tag/gdpr/">
@@ -96,7 +96,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.consciousDigital1"
-              defaultMessage="DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives to promote and advance Digital Human Rights."
+              defaultMessage="DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives promoting and advancing Digital Human Rights."
               values= {{
                 cd: <a target="_blank" href="https://consciousdigital.org/">Conscious Digital</a>
               }}
@@ -109,7 +109,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.fundingBody1"
-              defaultMessage="This project is self funded by it’s creators, and with the help of your donations."
+              defaultMessage="This project is self funded by it’s creators, and with the help of your donations (so please donate bellow!)."
             />
           </Typography>
           <br />
@@ -119,7 +119,7 @@ const About = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="about.sponsorsTitle"
-              defaultMessage="We’d like to thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
+              defaultMessage="We thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
             />
           </Typography>
           <Typography gutterBottom={true}>
