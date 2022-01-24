@@ -55,8 +55,7 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 			}
 		}
 	}, [selectedDataBroker]);
-
-
+	
 	return (
 		<div>
 			<MarkerClusterGroup ref={groupRef}>
@@ -78,7 +77,7 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 
 const RenderPopup = ({ dataBroker, classes }) => {
 	const trackOptOut = e => {
-		tracking.trackOptOut(dataBroker.Domain)
+		tracking.trackOptOut(dataBroker.Domain, "popup")
 	}
 
 	return (

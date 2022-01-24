@@ -34,8 +34,8 @@ export default {
     this.trackEvent("Download Dataset");
   },
 
-  trackOptOut(domain) {
-    this.trackEvent("Opt-out", domain);
+  trackOptOut(domain, from) {
+    this.trackEvent("Opt-out", domain, from);
   },
 
   trackSocialShare(network, sourcePage) {

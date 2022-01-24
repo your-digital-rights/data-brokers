@@ -38,11 +38,15 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
       return '';
     }
   };
+
+  const onOptOutClick = (e, domain) => {
+    tracking.trackOptOut(domain, 'row')
+  };
   
   const OptOutCellRenderer = params => {
     if (params.value) {
       return (
-        <IconButton color='black' target='_blank' href={params.value} onClick={tracking.trackOptOut} >
+        <IconButton color='black' target='_blank' href={params.value} onClick={e => onOptOutClick(e, params.data.Domain)} >
           <CancelScheduleSendIcon/>
         </IconButton>
       );
