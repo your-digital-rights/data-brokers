@@ -26,21 +26,16 @@ export default {
     this.track("trackSiteSearch", term);
   },
 
-  trackSelectedCompany(domain) {
-    this.trackEvent("Selected Domain", domain);
+  trackSelectedDataBroker(db) {
+    this.trackEvent("Selected Data Broker", db);
   },
 
-  trackRequestComplete(domain, regulationType, requestType) {
-    let requestTypeText = (requestType == "DELETION") ? "Erasure Request" : "Access Request"
-    this.trackEvent(
-      requestTypeText,
-      "Send " + regulationType + " Request",
-      domain
-    );
+  trackDownloadDataset() {
+    this.trackEvent("Download Dataset");
   },
 
-  trackAddNewOrg(domain, name) {
-    this.trackEvent("Add New Organization", domain, name);
+  trackOptOut(domain) {
+    this.trackEvent("Opt-out", domain);
   },
 
   trackSocialShare(network, sourcePage) {
@@ -59,11 +54,7 @@ export default {
     );
   },
 
-  trackSearchButtonLinkClick(device) {
-    this.trackEvent("Search Button Link Click", device);
-  },
-
-  trackWishlist() {
-    this.trackEvent("Wishlist Click");
+  trackMarkerClick(domain) {
+    this.trackEvent("Marker Click", domain);
   },
 };

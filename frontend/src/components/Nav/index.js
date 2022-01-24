@@ -2,7 +2,6 @@ import { FormattedMessage } from "react-intl";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import tracking from "../../utils/tracking";
 import classNames from "classnames";
 import styles from "./styles";
 import { searchOrganizationsUrlAnchor } from "../../utils/urlAnchors";
@@ -12,11 +11,6 @@ import { ALT_LANGUAGES } from '../../utils/langUtils';
 import { withRouter } from 'next/router'
 import Link from 'next/link'
 import cookieCutter from 'cookie-cutter'
-
-
-const trackSearchButtonLinkClick = (device) => {
-  tracking.trackSearchButtonLinkClick(device);
-};
 
 const NavItem = ({
   href,

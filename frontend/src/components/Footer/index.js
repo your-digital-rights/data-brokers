@@ -1,4 +1,3 @@
-import Button from "@material-ui/core/Button";
 import { FormattedMessage } from "react-intl";
 import Typography from "@material-ui/core/Typography";
 import { container } from "../../styles/layout";
@@ -95,10 +94,6 @@ const QueryText = (
 );
 
 const Footer = ({ classes }) => {
-
-  const trackWishlist = () => {
-    tracking.trackWishlist();
-  };
 
   return (
     <div className={classes.root}>

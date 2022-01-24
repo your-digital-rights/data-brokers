@@ -22,7 +22,7 @@
     },
     {
       "type": 0,
-      "value": ", a registered charity creating people centred digital initiatives to promote and advance Digital Human Rights."
+      "value": ", a registered charity creating people centred digital initiatives promoting and advancing Digital Human Rights."
     }
   ],
   "about.description": [
@@ -40,13 +40,13 @@
   "about.fundingBody1": [
     {
       "type": 0,
-      "value": "This project is self funded by it’s creators, and with the help of your donations."
+      "value": "This project is self funded by it’s creators, and with the help of your donations (so please donate bellow!)."
     }
   ],
   "about.missionBody1": [
     {
       "type": 0,
-      "value": "DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital experiences."
+      "value": "DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation, and the addictive nature of digital experiences."
     }
   ],
   "about.missionBody3": [
@@ -88,7 +88,7 @@
   "about.sponsorsTitle": [
     {
       "type": 0,
-      "value": "We’d like to thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
+      "value": "We thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
     }
   ],
   "about.title": [

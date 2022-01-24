@@ -10,7 +10,7 @@ import CancelScheduleSendIcon from '@material-ui/icons/CancelScheduleSend';
 import IconButton from '@material-ui/core/IconButton';
 import ReactCountryFlag from "react-country-flag";
 import dynamic from 'next/dynamic'
-
+import tracking from '../../utils/tracking';
 
 const DataBrokersDB = ({ classes, dataBrokers }) => {
   const DataBrokerContext = React.createContext({
@@ -42,7 +42,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
   const OptOutCellRenderer = params => {
     if (params.value) {
       return (
-        <IconButton color='black' target='_blank' href={params.value}>
+        <IconButton color='black' target='_blank' href={params.value} onClick={tracking.trackOptOut} >
           <CancelScheduleSendIcon/>
         </IconButton>
       );
@@ -58,11 +58,14 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     var yyyy = today.getFullYear();
     today = dd + '-' + mm + '-' + yyyy;
     var fileName = "data-brokers-" + today + ".csv";
+    tracking.trackDownloadDataset();
     gridRef.current.api.exportDataAsCsv({fileName: fileName});
   }
 
   const onQuickFilterChanged = () => {
-    gridRef.current.api.setQuickFilter(document.getElementById('quickFilter').value);
+    const value = document.getElementById('quickFilter').value;
+    gridRef.current.api.setQuickFilter(value);
+    tracking.trackSearch(value);
   };
 
   const onFirstDataRendered = (params) => {
@@ -87,6 +90,11 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
     gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
     gridRef.current.api.sizeColumnsToFit();
+  };
+
+  const onRowClicked = (e) => {
+    tracking.trackSelectedDataBroker(e.data.Domain);
+    setSelectedDataBroker(e.data); 
   };
 
   const Map = dynamic(
@@ -116,7 +124,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
               ref={gridRef}
               rowData={dataBrokers}
               rowSelection="single"
-              onRowClicked={(e) => setSelectedDataBroker(e.data)}
+              onRowClicked={onRowClicked}
               defaultColDef={{
                 flex: 1,
                 sortable: true,

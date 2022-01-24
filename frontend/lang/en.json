@@ -6,7 +6,7 @@
     "message": "Who we are"
   },
   "about.consciousDigital1": {
-    "message": "DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives to promote and advance Digital Human Rights."
+    "message": "DataBrokersWatch.org is a production of {cd}, a registered charity creating people centred digital initiatives promoting and advancing Digital Human Rights."
   },
   "about.description": {
     "message": "We track and map of the Data Broker ecosystem."
@@ -15,10 +15,10 @@
     "message": "Funding"
   },
   "about.fundingBody1": {
-    "message": "This project is self funded by it’s creators, and with the help of your donations."
+    "message": "This project is self funded by it’s creators, and with the help of your donations (so please donate bellow!)."
   },
   "about.missionBody1": {
-    "message": "DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation and the addictive nature of digital experiences."
+    "message": "DataBrokersWatch.org was created in order to map the data broker ecosystem. We believe that Data Brokers are a key enabler of the growing loss of privacy, rampant surveillance capitalism, micro-targeting and misinformation, and the addictive nature of digital experiences."
   },
   "about.missionBody3": {
     "message": "This is a free service intended to serve the wider community. We are not a business and do not have a business model. This service is <a>Open Source</a>."
@@ -30,7 +30,7 @@
     "message": "{innocraft} - for providing a hosted version of Matomo (Piwik), the open source and privacy minded web analytics platform."
   },
   "about.sponsorsTitle": {
-    "message": "We’d like to thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
+    "message": "We thank the following organizations for supporting our open source effort by providing a free or discounted version of their services:"
   },
   "about.title": {
     "message": "About Us"

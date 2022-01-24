@@ -10,6 +10,7 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet-defaulticon-compatibility';
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import tracking from '../../utils/tracking';
 
 const Map = (props) => {
 	const { classes, dataBrokers } = props;
@@ -55,6 +56,7 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 		}
 	}, [selectedDataBroker]);
 
+
 	return (
 		<div>
 			<MarkerClusterGroup ref={groupRef}>
@@ -75,6 +77,10 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 };
 
 const RenderPopup = ({ dataBroker, classes }) => {
+	const trackOptOut = e => {
+		tracking.trackOptOut(dataBroker.Domain)
+	}
+
 	return (
 		<div>
 			<Typography component="span" variant="h5" className={classes.renderGroupTitle}>
@@ -127,6 +133,7 @@ const RenderPopup = ({ dataBroker, classes }) => {
             color="promary"
             type="submit"
             className={classes.optoutBtn}
+						onClick={trackOptOut}
           >
             Opt Out
           </Button>
