@@ -61,4 +61,7 @@ export default theme => ({
   searchInput: {
     width: '100%',
   },
+  orgLogo: {
+    marginTop: '114px',
+  },
 });

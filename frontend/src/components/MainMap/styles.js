@@ -36,5 +36,9 @@ export const Style = (theme) => ({
   optoutBtn: {
     marginTop: "10px",
     width: "100%",
-  }
+  },
+  orgNamePopupLink: {
+    marginLeft: "10px"
+
+  },
 });

@@ -14,4 +14,7 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",   
   },
+  images: {
+    domains: ['logo.uplead.com', 'logo.clearbit.com'],
+  },  
 };

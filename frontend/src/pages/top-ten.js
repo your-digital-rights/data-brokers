@@ -16,7 +16,8 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import { NextSeo } from 'next-seo';
 import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { withRouter } from "next/router";
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 
 
 const styles = (theme) => ({
@@ -62,9 +63,11 @@ const styles = (theme) => ({
     padding: 30,
   },
   centerImg: {
-    width: "40%",
-    top: "40%",
-    left: "30%",
+    display: "flex",
+    justifyContent: "center",
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "10px",
+    },
   },
   tileBar: {
     textAlign: "center",
@@ -128,21 +131,24 @@ const Brokers = ({ classes, router }) => {
                       <Link href={"https://yourdigitalrights.org/d/" + company.domain} passHref> 
                         <GridListTile
                           component="a"
-                          href={"/d/" + company.domain}
+                          target="_blank"
                           key={company.domain}
                         >
-                          <img
-                            className={classes.centerImg}
-                            src={
-                              "//logo.uplead.com/" +
-                              company.domain 
-                            }
-                            alt={company.name}
-                          />
-                          <GridListTileBar
-                            className={classes.tileBar}
-                            title={company.name}
-                          />
+                          <div className={classes.centerImg} >
+                            <Image                              
+                              src={
+                                "https://logo.clearbit.com/" +
+                                company.domain + "?size=150"
+                              }
+                              width="100px"
+                              height="100px"
+                              alt={company.name}
+                            />
+                            <GridListTileBar
+                              className={classes.tileBar}
+                              title={company.name}
+                            />
+                          </div>
                         </GridListTile>
                       </Link>
                     </Paper>

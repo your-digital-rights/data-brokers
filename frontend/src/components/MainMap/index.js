@@ -11,6 +11,7 @@ import 'leaflet-defaulticon-compatibility';
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import tracking from '../../utils/tracking';
+import Image from 'next/image';
 
 const Map = (props) => {
 	const { classes, dataBrokers } = props;
@@ -79,11 +80,12 @@ const RenderPopup = ({ dataBroker, classes }) => {
 	const trackOptOut = e => {
 		tracking.trackOptOut(dataBroker.Domain, "popup")
 	}
+	console.log(dataBroker);
 
 	return (
 		<div>
 			<Typography component="span" variant="h5" className={classes.renderGroupTitle}>
-				<a target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}><img className={classes.markerLogo} width={24} src={`//logo.uplead.com/${dataBroker['Domain']}`}/>{dataBroker["Company Name"]}</a>
+				<Image className={classes.markerLogo} height={35} width={35} src={`https://logo.clearbit.com/${dataBroker['Domain']}?size=35`}/><a className={classes.orgNamePopupLink} target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>  {dataBroker["Company Name"]}</a>
 			</Typography>	
 			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}

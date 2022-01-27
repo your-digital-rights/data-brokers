@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ReactCountryFlag from "react-country-flag";
 import dynamic from 'next/dynamic'
 import tracking from '../../utils/tracking';
+import Image from 'next/image';
 
 const DataBrokersDB = ({ classes, dataBrokers }) => {
   const DataBrokerContext = React.createContext({
@@ -26,9 +27,16 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
   const [selectedDataBroker, setSelectedDataBroker] = React.useState(null);
   const gridRef = useRef(null);
 
-  const DomainCellRenderer = params => {
-    const domain = params.value.charAt(0).toUpperCase() + params.value.slice(1);
-    return "<img style='vertical-align: middle' width='20px' src='//logo.uplead.com/" + params.value + "'/><span style='padding-left: 10px' >" + domain + "</span>";
+  const DomainCellRenderer = props => {
+    const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
+    const domain = props.value.charAt(0).toUpperCase() + props.value.slice(1);
+
+    return (
+      <>
+        <Image className={classes.orgLogo} width='20px' height='20px' src={`https://logo.clearbit.com/${props.value}?size=20`} />
+        <span style={{paddingLeft: "10px"}} >{props.value}</span>
+      </>
+    );
   };
   
   const CountryCellRenderer = params => {
@@ -137,12 +145,13 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
               frameworkComponents={{
                 optOutCellRenderer: OptOutCellRenderer,
                 countryCellRenderer: CountryCellRenderer,
+                domainCellRenderer: DomainCellRenderer,
               }}
               onFirstDataRendered={onFirstDataRendered}
               onGridSizeChanged={onGridSizeChanged}
               reactUi={true}
             >
-              <AgGridColumn field="Domain" headerName="Domain" minWidth={150} cellRenderer={DomainCellRenderer}></AgGridColumn>
+              <AgGridColumn field="Domain" headerName="Domain" minWidth={150} cellRenderer="domainCellRenderer"></AgGridColumn>
               <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" minWidth={95} maxWidth={110} ></AgGridColumn>
               <AgGridColumn field="Company Name" headerName="Name" minWidth={100} ></AgGridColumn>
               <AgGridColumn field="Company Category Industry" headerName="Industry" minWidth={150} ></AgGridColumn>
