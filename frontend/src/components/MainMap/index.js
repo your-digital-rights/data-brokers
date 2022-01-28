@@ -77,6 +77,7 @@ const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
 };
 
 const RenderPopup = ({ dataBroker, classes }) => {
+	const [src, setSrc] = React.useState(`https://logo.clearbit.com/${dataBroker.Domain}?size=20`);
 	const trackOptOut = e => {
 		tracking.trackOptOut(dataBroker.Domain, "popup")
 	}
@@ -85,7 +86,16 @@ const RenderPopup = ({ dataBroker, classes }) => {
 	return (
 		<div>
 			<Typography component="span" variant="h5" className={classes.renderGroupTitle}>
-				<Image className={classes.markerLogo} height={35} width={35} src={`https://logo.clearbit.com/${dataBroker['Domain']}?size=35`}/><a className={classes.orgNamePopupLink} target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>  {dataBroker["Company Name"]}</a>
+				<Image 
+					className={classes.markerLogo} 
+					height={35} 
+					width={35} 
+					src={src} 
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
+          onError={() => setSrc('/images/placeholder.png')}
+				/>
+				<a className={classes.orgNamePopupLink} target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>  {dataBroker["Company Name"]}</a>
 			</Typography>	
 			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}

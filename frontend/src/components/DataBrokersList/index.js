@@ -30,12 +30,21 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
   const DomainCellRenderer = props => {
     const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
     const domain = props.value.charAt(0).toUpperCase() + props.value.slice(1);
-
+    const [src, setSrc] = React.useState(`https://logo.clearbit.com/${props.value}?size=20`);
+   
     return (
-      <>
-        <Image className={classes.orgLogo} width='20px' height='20px' src={`https://logo.clearbit.com/${props.value}?size=20`} />
+      <div>
+        <Image 
+          className={classes.orgLogo} 
+          width='20px' 
+          height='20px' 
+          src={src} 
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
+          onError={() => setSrc('/images/placeholder.png')}
+        />
         <span style={{paddingLeft: "10px"}} >{props.value}</span>
-      </>
+      </div>
     );
   };
   

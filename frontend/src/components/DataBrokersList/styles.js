@@ -64,4 +64,7 @@ export default theme => ({
   orgLogo: {
     marginTop: '114px',
   },
+  domain: {
+    paddingLeft: "10px",
+  },
 });
