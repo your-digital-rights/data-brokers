@@ -33,18 +33,20 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     const [src, setSrc] = React.useState(`https://logo.clearbit.com/${props.value}?size=20`);
    
     return (
-      <div>
-        <Image 
-          className={classes.orgLogo} 
-          width='20px' 
-          height='20px' 
-          src={src} 
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
-          onError={() => setSrc('/images/placeholder.png')}
-        />
-        <span style={{paddingLeft: "10px"}} >{props.value}</span>
+      <>
+      <Image 
+        className={classes.orgLogo} 
+        width='20px' 
+        height='20px' 
+        src={src} 
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
+        onError={() => setSrc('/images/placeholder.png')}
+      />
+      <div className={classes.domainNameWrapper}>        
+        <span className={classes.domainName} >{props.value}</span>
       </div>
+      </>
     );
   };
   

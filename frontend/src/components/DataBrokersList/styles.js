@@ -62,9 +62,13 @@ export default theme => ({
     width: '100%',
   },
   orgLogo: {
-    marginTop: '114px',
+    marginBottom: "-5px",
+    marginTop: "10px",
   },
-  domain: {
-    paddingLeft: "10px",
+  domainNameWrapper: {
+    marginTop: "-50px",
+  },
+  domainName: {
+    paddingLeft: "30px",
   },
 });
