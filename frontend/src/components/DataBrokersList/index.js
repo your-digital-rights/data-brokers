@@ -12,6 +12,7 @@ import ReactCountryFlag from "react-country-flag";
 import dynamic from 'next/dynamic'
 import tracking from '../../utils/tracking';
 import Image from 'next/image';
+import {DOMAIN_URL} from '../../utils/domain';
 
 const DataBrokersDB = ({ classes, dataBrokers }) => {
   const DataBrokerContext = React.createContext({
@@ -81,7 +82,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     var yyyy = today.getFullYear();
     today = dd + '-' + mm + '-' + yyyy;
     var fileName = "data-brokers-" + today + ".csv";
-    tracking.trackDownloadDataset();
+    _paq.push(['trackLink', DOMAIN_URL, 'download']);
     gridRef.current.api.exportDataAsCsv({fileName: fileName});
   }
 

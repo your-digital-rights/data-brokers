@@ -30,10 +30,6 @@ export default {
     this.trackEvent("Selected Data Broker", db);
   },
 
-  trackDownloadDataset() {
-    this.trackEvent("Download Dataset");
-  },
-
   trackOptOut(domain, from) {
     this.trackEvent("Opt-out", domain, from);
   },

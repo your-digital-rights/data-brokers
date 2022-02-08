@@ -56,7 +56,7 @@ async function fetchDataBrokers() {
     return {"License": "GNU General Public License v3.0", "DataBrokers": results};
   } 
   catch (e) {
-    console.log(e);
+    console.error(e);
   }
 };
 

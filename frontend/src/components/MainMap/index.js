@@ -81,7 +81,6 @@ const RenderPopup = ({ dataBroker, classes }) => {
 	const trackOptOut = e => {
 		tracking.trackOptOut(dataBroker.Domain, "popup")
 	}
-	console.log(dataBroker);
 
 	return (
 		<div>
@@ -141,7 +140,7 @@ const RenderPopup = ({ dataBroker, classes }) => {
             href={dataBroker["YDR URL"]}
 						target="_blank"
             variant="outlined"
-            color="promary"
+            color="primary"
             type="submit"
             className={classes.optoutBtn}
 						onClick={trackOptOut}
