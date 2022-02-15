@@ -27,12 +27,12 @@ const Donations = ({ classes, children }) => {
           <Typography color="inherit" className={classes.intro}>
             <FormattedMessage
               id="donations.donateIntro"
-              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back. <strong>Please consider donating:</strong>"
+              defaultMessage="DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
               values={{
                 strong: (chunks) => <strong>{chunks}</strong>,
               }}
             />
-          </Typography>      
+          </Typography>                  
           <div className={classes.buttons}>
             <Button
               variant="contained"
@@ -42,7 +42,7 @@ const Donations = ({ classes, children }) => {
               className={classes.donateLPButton}
               onClick={() => trackDonate("Donation - Librapay")}
             >
-              <FormattedMessage id="donations.Liberapay" defaultMessage="Liberapay" />
+              <FormattedMessage id="donations.Liberapay" defaultMessage="Donate via Liberapay" />
             </Button>                          
             <Button
               variant="contained"
@@ -52,7 +52,7 @@ const Donations = ({ classes, children }) => {
               className={classes.donateBTCButton}
               onClick={() => trackDonate("Donation - BTC")}
             >
-              <FormattedMessage id="donations.Bitcoin" defaultMessage="Bitcoin" />
+              <FormattedMessage id="donations.Bitcoin" defaultMessage="Donate Bitcoin" />
             </Button>
           </div>
           {children}

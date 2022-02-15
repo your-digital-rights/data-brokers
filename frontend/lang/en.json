@@ -108,13 +108,13 @@
     "message": "Opt Out of the Top Data Brokers"
   },
   "donations.Bitcoin": {
-    "message": "Bitcoin"
+    "message": "Donate Bitcoin"
   },
   "donations.Liberapay": {
-    "message": "Liberapay"
+    "message": "Donate via Liberapay"
   },
   "donations.donateIntro": {
-    "message": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back. <strong>Please consider donating:</strong>"
+    "message": "DataBrokersWatch.org was created because we believe that data brokers are the worst offenders against online privacy. Your donations allow us to fight back."
   },
   "donations.headingDonate": {
     "message": "We need your support"
@@ -221,38 +221,20 @@
   "privacy.usageDataBody": {
     "message": "We may collect information on how the Service is accessed and used (\"Usage Data\"). This Usage Data may include information such as the Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, the actions you perform, unique device identifiers and other diagnostic data. We use the following third-party Service Provider to monitor and analyze the use of our Service:"
   },
-  "social.chromeCTA": {
-    "message": "Download it for Chrome"
-  },
-  "social.chromeTitle": {
-    "message": "Google Chrome Extension"
-  },
   "social.emailBody": {
-    "message": "Check out YourDigitalRights.org, a free service which makes it easy to find out what personal data thousands of organizations have on you, and get them to delete it."
+    "message": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
   },
   "social.emailSubject": {
-    "message": "Find out what personal data thousands of organizations have on you, and get them to delete it | Your Digital Rights"
-  },
-  "social.extensionHeadline": {
-    "message": "Opt out directly from your browser"
-  },
-  "social.extensionText": {
-    "message": "Do you want better control over who has access to your personal data? Our browser extension allows you to opt out of the websites you visit with a click of a button."
+    "message": "Check out DataBrokersWatch.org"
   },
   "social.facebookQuote": {
-    "message": "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
-  },
-  "social.firefoxCTA": {
-    "message": "Download it for Firefox"
-  },
-  "social.frefoxTitle": {
-    "message": "FireFox Extention"
+    "message": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
   },
   "social.shareHeading": {
     "message": "Like this project? Help others find it."
   },
   "social.twitterTitle": {
-    "message": "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org"
+    "message": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
   },
   "usageData": {
     "message": "Usage Data"

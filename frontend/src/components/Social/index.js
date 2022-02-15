@@ -25,14 +25,9 @@ const styles = (theme) => ({
     ...theme,
   },
 
-  offsetThankYou: {
+  offset: {
     paddingTop: "50px",
     marginTop: -10,
-  },
-
-  offset: {
-    paddingTop: "200px",
-    marginTop: -160,
   },
 
   shareHeading: {
@@ -142,30 +137,29 @@ const styles = (theme) => ({
 const Social = ({
   classes,
   intl,
-  sourcePage = "thankyou" /* default value */,
+  sourcePage = "homepage" /* default value */,
   style,
 }) => {
-  var rootClassName = (sourcePage === "thankyou") ? classes.offsetThankYou : classes.offset;
 
   const emailSubject = intl.formatMessage({
     id: "social.emailSubject",
     defaultMessage:
-      "Find out what personal data thousands of organizations have on you, and get them to delete it | Your Digital Rights",
+      "Check out DataBrokersWatch.org",
   });
   const emailBody = intl.formatMessage({
     id: "social.emailBody",
     defaultMessage:
-      "Check out YourDigitalRights.org, a free service which makes it easy to find out what personal data thousands of organizations have on you, and get them to delete it.",
+      "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem.",
   });
   const twitterTitle = intl.formatMessage({
     id: "social.twitterTitle",
     defaultMessage:
-      "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
+      "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem.",
   });
   const facebookQuote = intl.formatMessage({
     id: "social.facebookQuote",
     defaultMessage:
-      "Check out the largest publicly available dataset of data brokers and make it available to the wider research community. Check out databrokerswatch.org",
+      "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem.",
   });
   const emailLink = mailtoLink({ subject: emailSubject, body: emailBody });
 
@@ -187,72 +181,7 @@ const Social = ({
   };
 
   return (
-    <div className={classNames(classes.root, rootClassName, "ss")} style={style}>
-      {sourcePage === "homepage" && (
-        <div id="Extension" className={classes.extensionHelperPlaceHolder}>
-          <div className={classes.extensionHelperContainer}>
-            <div className={classes.extensionHelpImgContainer}>
-              <img
-                src="/images/extensionHelperImages/extensionToolTipImage.png"
-                className={classes.extensionHelpImg}
-              ></img>
-            </div>
-            <div className={classes.extensionHelpTextContainer}>
-              <Typography
-                className={classes.extensionHelpHeading}
-                component="h2"
-                variant="h3"
-                color="inherit"
-              >
-                <FormattedMessage id="social.extensionHeadline" defaultMessage="Opt out directly from your browser" />
-              </Typography>
-              <Typography
-                className={classes.extensionHelpParagraph}
-                component="p"
-                color="inherit"
-              >
-                <FormattedMessage id="social.extensionText" defaultMessage="Do you want better control over who has access to your personal data? Our browser extension allows you to opt out of the websites you visit with a click of a button." />
-              </Typography>
-              <div className={classes.extensionHelpButtonContainer}>
-                <Fab
-                  variant="extended"
-                  onClick={() => trackWebExtension("chrome-extension")}
-                  aria-label={intl.formatMessage({id: "social.chromeTitle", defaultMessage: "Google Chrome Extension"})}
-                  className={classes.extensionDownloadButton}
-                  target="_blank"
-                  href="https://chrome.google.com/webstore/detail/opt-out-one-click-gdpr-er/dedldhojjkgbejnmmfpmbnbihmmpfbpd?hl=en-GB"
-                >
-                  <FontAwesomeIcon
-                    className={classes.extensionDownloadButtonIcon}
-                    color="#00AE8D"
-                    icon={faChrome}
-                  />
-                  <FormattedMessage id="social.chromeCTA" defaultMessage="Download it for Chrome" />
-                </Fab>
-                <Fab
-                  variant="extended"
-                  onClick={trackWebExtension.bind(null, 'firefox-extension')}
-                  aria-label={intl.formatMessage({id: "social.frefoxTitle", defaultMessage: "FireFox Extention"})}
-                  className={classes.extensionDownloadButton}
-                  target="_blank"
-                  href="https://addons.mozilla.org/en-GB/android/addon/opt-out/"
-                >
-                  <FontAwesomeIcon
-                    className={classNames(
-                      classes.extensionDownloadButtonIcon,
-                      classes.extensionDownloadButtonIconFireFox
-                    )}
-                    color="#00AE8D"
-                    icon={faFirefox}
-                  />
-                  <FormattedMessage id="social.firefoxCTA" defaultMessage="Download it for Firefox" />
-                </Fab>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
+    <div className={classNames(classes.root, classes.offset, "ss")} style={style}>
       <Typography
         variant="h6"
         gutterBottom={true}
@@ -296,12 +225,10 @@ const Social = ({
         }
         title={twitterTitle}
         hashtags={[
-          "GDPR",
-          "CCPA",
-          "yourdigitalrights",
-          "righttobeforgotten",
-          "optout",
-          "ownyourdata",
+          "DataBrokers",
+          "PersonalData",
+          "SurveillanceCapitalism",
+          "Privacy",
         ]}
         className="ss-btn"
       >
