@@ -66,7 +66,7 @@ setInterval(() => {
 
 export default async (req, res) => {
   const query = url.parse(req.url,true).query;
-  if (query.flush == "02874523") {
+  if (query.flush == process.env.CACHE_INVALIDATION) {
     console.log("Flushing the cache.");
     data = fetchDataBrokers();
   }
