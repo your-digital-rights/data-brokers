@@ -165,7 +165,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
             >
               <AgGridColumn field="Domain" headerName="Service" minWidth={150} cellRenderer="domainCellRenderer"></AgGridColumn>
               <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" minWidth={95} maxWidth={110} ></AgGridColumn>
-              <AgGridColumn field="Company Name" headerName="Name" minWidth={100} ></AgGridColumn>
+              <AgGridColumn field="Company Name" headerName="Company Name" minWidth={100} ></AgGridColumn>
               <AgGridColumn field="Company Category Industry" headerName="Industry" minWidth={150} ></AgGridColumn>
               <AgGridColumn field="Company Category Sub Industry" headerName="Sub Industry" minWidth={150} ></AgGridColumn>
               <AgGridColumn field="YDR URL" headerName="Opt-out" cellRenderer="optOutCellRenderer" minWidth={95} maxWidth={100} ></AgGridColumn>
