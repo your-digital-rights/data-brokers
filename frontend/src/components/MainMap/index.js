@@ -94,8 +94,10 @@ const RenderPopup = ({ dataBroker, classes }) => {
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
           onError={() => setSrc('/images/placeholder.png')}
 				/>
-				<a className={classes.orgNamePopupLink} target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>  {dataBroker["Company Name"]}</a>
+				<a className={classes.orgNamePopupLink} target="_blank" rel="nofollow" href={`https://${dataBroker["Domain"]}`}>  {dataBroker["Domain"]}</a>
 			</Typography>	
+			<br/>
+			<strong>Company Name:</strong> {dataBroker["Company Name"]}
 			<br/>
 			<strong>Industry:</strong> {dataBroker["Company Category Industry"]}
 			<br/>

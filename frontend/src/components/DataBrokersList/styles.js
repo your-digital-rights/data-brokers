@@ -1,5 +1,4 @@
 import { container } from "../../styles/layout";
-import { themeBg } from "../../styles/theme";
 
 export default theme => ({
   container: {

@@ -38,7 +38,7 @@ export const Style = (theme) => ({
     width: "100%",
   },
   orgNamePopupLink: {
-    marginLeft: "10px"
-
+    marginLeft: "10px",
+    textTransform: "capitalize",
   },
 });

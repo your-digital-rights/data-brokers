@@ -163,7 +163,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
               onGridSizeChanged={onGridSizeChanged}
               reactUi={true}
             >
-              <AgGridColumn field="Domain" headerName="Domain" minWidth={150} cellRenderer="domainCellRenderer"></AgGridColumn>
+              <AgGridColumn field="Domain" headerName="Service" minWidth={150} cellRenderer="domainCellRenderer"></AgGridColumn>
               <AgGridColumn field="Company Geo Country Code" headerName="Country" cellRenderer="countryCellRenderer" minWidth={95} maxWidth={110} ></AgGridColumn>
               <AgGridColumn field="Company Name" headerName="Name" minWidth={100} ></AgGridColumn>
               <AgGridColumn field="Company Category Industry" headerName="Industry" minWidth={150} ></AgGridColumn>
