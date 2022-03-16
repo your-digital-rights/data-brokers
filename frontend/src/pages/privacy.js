@@ -64,7 +64,7 @@ const Privacy = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="privacy.promiseBody"
-              defaultMessage="We do not collect personal data. If we ever decide to collect personal data in the future then we will let you know in this Privacy Policy, and limit the Personal Data collected to the absolute minimum required to deliver this Service (databrokerswatch.org). We will never sell or rent your personal information to anyone."
+              defaultMessage="We do not collect personal data. If we ever decide to collect personal data in the future then we will let you know in this Privacy Policy, and will limit the Personal Data collected to the absolute minimum required to deliver this Service (databrokerswatch.org). We will never sell or rent your personal information to anyone."
             />
           </Typography>
           <br />
@@ -87,24 +87,33 @@ const Privacy = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="privacy.usageDataBody"
-              defaultMessage='We may collect anonymous usage data to help us understand how to improve this Service ("Usage Data"). We use the following third-party Service Provider to monitor and analyze the use of our Service:'
+              defaultMessage='We may collect anonymous usage data to help us understand how to improve this Service ("Usage Data"). We use a third-party Service Provider called Matomo, a privacy minded web analytics service by Innocraft. You can visit the privacy policy page for that service { matomo }.'
+              values={{
+                matomo: (
+                  <a href="https://www.innocraft.com/privacy">
+                    here
+                  </a>
+                ),
+              }}
             />
-            <ul>
-              <li>
-                <FormattedMessage
-                  id="privacy.analyticsBodyOneA"
-                  defaultMessage="Matomo: a privacy minded web analytics service by Innocraft. You can visit their { matomo } page."
-                  values={{
-                    matomo: (
-                      <a href="https://www.innocraft.com/privacy">
-                        Privacy Policy
-                      </a>
-                    ),
-                  }}
-                />
-              </li>
-            </ul>
           </Typography>
+          <br />
+          <Typography gutterBottom={true} variant="body2">
+            <FormattedMessage id="privacyoptingOut" defaultMessage="Opting Out" />
+          </Typography>
+          <Typography gutterBottom={true}>
+            <FormattedMessage
+              id="privacy.optOut"
+              defaultMessage='When you choose to opt out of a data broker via this webiste you will be redirected to our sister service YourDigitalRights.org, which is operated by the same nonprofit organization. You can visit the privacy policy for that service {here}.'
+              values={{
+                here: (
+                  <a href="https://yourdigitalrights.org/privacy">
+                    here
+                  </a>
+                ),
+              }}
+            />
+          </Typography>          
           <br />
           <Typography gutterBottom={true} variant="body2">
             <FormattedMessage id="privacy.contact" defaultMessage="Contact" />

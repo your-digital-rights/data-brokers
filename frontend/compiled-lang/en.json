@@ -499,20 +499,6 @@
       "value": "Why data brokers?"
     }
   ],
-  "privacy.analyticsBodyOneA": [
-    {
-      "type": 0,
-      "value": "Matomo: a privacy minded web analytics service by Innocraft. You can visit their "
-    },
-    {
-      "type": 1,
-      "value": "matomo"
-    },
-    {
-      "type": 0,
-      "value": " page."
-    }
-  ],
   "privacy.contact": [
     {
       "type": 0,
@@ -545,6 +531,20 @@
       "value": "Last updated:"
     }
   ],
+  "privacy.optOut": [
+    {
+      "type": 0,
+      "value": "When you choose to opt out of a data broker via this webiste you will be redirected to our sister service YourDigitalRights.org, which is operated by the same nonprofit organization. You can visit the privacy policy for that service "
+    },
+    {
+      "type": 1,
+      "value": "here"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
   "privacy.personalData": [
     {
       "type": 0,
@@ -572,7 +572,7 @@
   "privacy.promiseBody": [
     {
       "type": 0,
-      "value": "We do not collect personal data. If we ever decide to collect personal data in the future then we will let you know in this Privacy Policy, and limit the Personal Data collected to the absolute minimum required to deliver this Service (databrokerswatch.org). We will never sell or rent your personal information to anyone."
+      "value": "We do not collect personal data. If we ever decide to collect personal data in the future then we will let you know in this Privacy Policy, and will limit the Personal Data collected to the absolute minimum required to deliver this Service (databrokerswatch.org). We will never sell or rent your personal information to anyone."
     }
   ],
   "privacy.title": [
@@ -584,7 +584,21 @@
   "privacy.usageDataBody": [
     {
       "type": 0,
-      "value": "We may collect anonymous usage data to help us understand how to improve this Service (\"Usage Data\"). We use the following third-party Service Provider to monitor and analyze the use of our Service:"
+      "value": "We may collect anonymous usage data to help us understand how to improve this Service (\"Usage Data\"). We use a third-party Service Provider called Matomo, a privacy minded web analytics service by Innocraft. You can visit the privacy policy page for that service "
+    },
+    {
+      "type": 1,
+      "value": "matomo"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "privacyoptingOut": [
+    {
+      "type": 0,
+      "value": "Opting Out"
     }
   ],
   "social.emailBody": [
