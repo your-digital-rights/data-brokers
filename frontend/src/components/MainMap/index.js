@@ -155,4 +155,4 @@ const RenderPopup = ({ dataBroker, classes }) => {
 	);
 };
 
-export default withStyles(styles)(Map);
+export default withStyles(styles)(React.memo(Map));
