@@ -61,7 +61,7 @@ function Index({ classes, router }) {
         <Hero dataBrokers={dataBrokers}/>
         <DataBrokersDB dataBrokers={dataBrokers} />
         <AboutDataBrokers />
-        <Social />
+        <Social offset={false}/>
         <Donations />
         <Footer />
       </div>

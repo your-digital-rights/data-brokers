@@ -18,6 +18,7 @@ import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { withRouter } from "next/router";
 import Link from 'next/link';
 import Image from 'next/image';
+import Subscribe from '../components/Subscribe';
 
 
 const styles = (theme) => ({
@@ -33,8 +34,9 @@ const styles = (theme) => ({
     justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
-    paddingLeft: 120,
-    paddingRight: 120,
+    textAlign: "center",
+    paddingLeft: 30,
+    paddingRight: 30,
     paddingTop: 50,
     paddingBottom: 50,
     [theme.breakpoints.down("sm")]: {
@@ -60,7 +62,8 @@ const styles = (theme) => ({
     },
   },
   grid: {
-    padding: 30,
+    paddingTop: 60,
+    paddingBottom: 60,
   },
   centerImg: {
     display: "flex",
@@ -119,7 +122,7 @@ const Brokers = ({ classes, router }) => {
           <Typography gutterBottom={true}>
             <FormattedMessage
               id="data-brokers.brokersIntro"
-              defaultMessage="These are some of the top data brokers, click an organization to send a data deletion request."
+              defaultMessage="Click on an organization to send a data deletion request."
             />
           </Typography>
           <Grid container className={classes.grid} spacing={2}>
@@ -157,6 +160,7 @@ const Brokers = ({ classes, router }) => {
               </Grid>
             </Grid>
           </Grid>
+          <Subscribe/>
           <Button
             variant="contained"
             color="secondary"
@@ -173,7 +177,6 @@ const Brokers = ({ classes, router }) => {
         </Paper>
       </div>
       <Social offset={true} sourcePage="data-brokers" />
-      <Donations />
       <Footer />
     </div>
   );

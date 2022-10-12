@@ -10,8 +10,6 @@ import {
 } from "react-share";
 import classNames from "classnames";
 import tracking from "../../utils/tracking";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChrome, faFirefox } from "@fortawesome/free-brands-svg-icons";
 
 const styles = (theme) => ({
   root: {
@@ -26,6 +24,11 @@ const styles = (theme) => ({
   },
 
   offset: {
+    paddingTop: "240px",
+    marginTop: -170,
+  },
+
+  offsetHome: {
     paddingTop: "50px",
     marginTop: -10,
   },
@@ -141,6 +144,8 @@ const Social = ({
   style,
 }) => {
 
+  var rootClassName = (sourcePage === "homepage") ? classes.offsetHome : classes.offset;
+
   const emailSubject = intl.formatMessage({
     id: "social.emailSubject",
     defaultMessage:
@@ -181,7 +186,7 @@ const Social = ({
   };
 
   return (
-    <div className={classNames(classes.root, classes.offset, "ss")} style={style}>
+    <div className={classNames(classes.root, rootClassName, "ss")} style={style}>
       <Typography
         variant="h6"
         gutterBottom={true}

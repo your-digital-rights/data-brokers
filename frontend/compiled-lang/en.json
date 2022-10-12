@@ -290,7 +290,7 @@
   "data-brokers.brokersIntro": [
     {
       "type": 0,
-      "value": "These are some of the top data brokers, click an organization to send a data deletion request."
+      "value": "Click on an organization to send a data deletion request."
     }
   ],
   "data-brokers.description": [
@@ -629,6 +629,24 @@
     {
       "type": 0,
       "value": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
+    }
+  ],
+  "subscribe.alertsOneLiner": [
+    {
+      "type": 0,
+      "value": "Improve your online privacy over time by opting out of 3 companies each month. Our research team hand-picks the worst privacy offenders."
+    }
+  ],
+  "subscribe.signup": [
+    {
+      "type": 0,
+      "value": "Sign up"
+    }
+  ],
+  "subscribe.title": [
+    {
+      "type": 0,
+      "value": "Sign up to our privacy alerts!"
     }
   ],
   "usageData": [

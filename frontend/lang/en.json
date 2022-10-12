@@ -96,7 +96,7 @@
     "message": "Opt Out of the Top Data Brokers"
   },
   "data-brokers.brokersIntro": {
-    "message": "These are some of the top data brokers, click an organization to send a data deletion request."
+    "message": "Click on an organization to send a data deletion request."
   },
   "data-brokers.description": {
     "message": "Get the top data brokers to erase your personal data"
@@ -226,6 +226,15 @@
   },
   "social.twitterTitle": {
     "message": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
+  },
+  "subscribe.alertsOneLiner": {
+    "message": "Improve your online privacy over time by opting out of 3 companies each month. Our research team hand-picks the worst privacy offenders."
+  },
+  "subscribe.signup": {
+    "message": "Sign up"
+  },
+  "subscribe.title": {
+    "message": "Sign up to our privacy alerts!"
   },
   "usageData": {
     "message": "Usage Data"
