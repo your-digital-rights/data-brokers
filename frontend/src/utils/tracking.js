@@ -41,6 +41,10 @@ export default {
   trackDonate(type, source) {
     this.trackEvent("Donation Click", type, "Donation From " + source);
   },
+  
+  trackSubscribe(source) {
+    this.trackEvent("Subscribe Click", "Subscribe From " + source);
+  },
 
   trackWebExtension(browser, sourcePage) {
     this.trackEvent(

@@ -9,9 +9,9 @@ const handleSignUpClick = (e) => {
   e.preventDefault();
 }
 
-const Subscribe = ({ classes, children }) => {
+const Subscribe = ({ classes, children, page="Top 10"}) => {
   const trackSubscribe = () => {
-    tracking.trackSubscribe("Thankyou Page");
+    tracking.trackSubscribe(page);
   };
 
   return (
@@ -45,7 +45,7 @@ const Subscribe = ({ classes, children }) => {
               color="primary"
               className={classes.signUpButton}
               id="ThanksMessageBtn"
-              href="/privacy-alerts"
+              href="https://yourdigitalrights.org/privacy-alerts"
               onClick={() => trackSubscribe()}
             >
               <FormattedMessage id="subscribe.signup" defaultMessage="Sign up" />
