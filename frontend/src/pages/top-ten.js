@@ -138,16 +138,14 @@ const Brokers = ({ classes, router }) => {
                           key={company.domain}
                         >
                           <div className={classes.centerImg} >
-                            <div className={classes.logo} >
-                              <Image                              
-                                src={
-                                  `https://logo.clearbit.com/${company.domain}?size=150`
-                                }
-                                layout={'fill'} 
-                                objectFit={'scale-down'}
-                                alt={company.name}
-                              />
-                            </div>
+                            <Image                              
+                              src={
+                                `https://logo.clearbit.com/${company.domain}?size=150`
+                              }
+                              layout={'fill'} 
+                              objectFit={'scale-down'}
+                              alt={company.name}
+                            />
                             <GridListTileBar
                               className={classes.tileBar}
                               title={company.name}
