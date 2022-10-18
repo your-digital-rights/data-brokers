@@ -66,13 +66,13 @@ const styles = (theme) => ({
     paddingBottom: 60,
   },
   centerImg: {
-    display: "flex",
     justifyContent: "center",
     [theme.breakpoints.up("sm")]: {
       marginTop: "10px",
     },
   },
   tileBar: {
+    height: "20%",
     textAlign: "center",
     color: "#0070bf",
     backgroundColor: "#0070bf",
@@ -138,15 +138,16 @@ const Brokers = ({ classes, router }) => {
                           key={company.domain}
                         >
                           <div className={classes.centerImg} >
-                            <Image                              
-                              src={
-                                "https://logo.clearbit.com/" +
-                                company.domain + "?size=150"
-                              }
-                              width="100px"
-                              height="100px"
-                              alt={company.name}
-                            />
+                            <div className={classes.logo} >
+                              <Image                              
+                                src={
+                                  `https://logo.clearbit.com/${company.domain}?size=150`
+                                }
+                                layout={'fill'} 
+                                objectFit={'scale-down'}
+                                alt={company.name}
+                              />
+                            </div>
                             <GridListTileBar
                               className={classes.tileBar}
                               title={company.name}

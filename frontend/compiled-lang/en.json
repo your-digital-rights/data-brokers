@@ -631,10 +631,16 @@
       "value": "Check out DataBrokersWatch.org, the largest publicly available dataset of data brokers, a research project aiming to track and map the data broker ecosystem."
     }
   ],
-  "subscribe.alertsOneLiner": [
+  "subscribe.alertsOneLiner1": [
     {
       "type": 0,
-      "value": "Improve your online privacy over time by opting out of 3 companies each month. Our research team hand-picks the worst privacy offenders."
+      "value": "Improve your online privacy over time by opting out of 3 companies each month."
+    }
+  ],
+  "subscribe.alertsOneLiner2": [
+    {
+      "type": 0,
+      "value": "Our research team hand-picks the worst privacy offenders."
     }
   ],
   "subscribe.signup": [
