@@ -159,7 +159,7 @@ const Brokers = ({ classes, router }) => {
               </Grid>
             </Grid>
           </Grid>
-          <Subscribe/>
+          <Subscribe page="top-ten"/>
           <Button
             variant="contained"
             color="secondary"
