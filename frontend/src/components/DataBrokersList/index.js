@@ -183,8 +183,8 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
           </Button>
         </div>                 
       </Paper>
-      <div className={classes.licanse}>
-          This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      <div className={classes.license}>
+          The data brokers database is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
         </div> 
     </div>
   );

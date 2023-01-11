@@ -5,7 +5,7 @@ import AboutDataBrokers from "../components/AboutDataBrokers";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Social from "../components/Social";
-import Donations from "../components/Donations";
+import Subscribe from "../components/Subscribe";
 import { withStyles } from "@material-ui/core/styles";
 import {generateCanonical, generateLangLinks} from "../utils/langUtils";
 import { NextSeo } from 'next-seo';
@@ -61,8 +61,7 @@ function Index({ classes, router }) {
         <Hero dataBrokers={dataBrokers}/>
         <DataBrokersDB dataBrokers={dataBrokers} />
         <AboutDataBrokers />
-        <Social offset={false}/>
-        <Donations />
+        <Subscribe />
         <Footer />
       </div>
     </div>

@@ -54,7 +54,7 @@ export default theme => ({
       marginRight: '10px',
     },        
   }, 
-  licanse: {
+  license: {
     marginTop: "35px",
   },
   searchInput: {

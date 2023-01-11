@@ -4,18 +4,18 @@ import { theme } from "../../styles/theme";
 const Theme = (theme) => ({
   heading: {
     color: "white",
-    padding: "50px 20px",
+    padding: "25px 20px",
     backgroundColor: "#039277",
     borderRadius: "20px",
     maxWidth: "980px !important",
-    margin: "0px 30px",
+    margin: "30px",
     [theme.breakpoints.down("sm")]: {
       display: "inherit",
       margin: "auto 10px",
     },
   },
   container: {
-    paddingBottom: "40px",
+    paddingBottom: "20px",
     boxSizing: "border-box",
     textAlign: "center",
     ...container,
@@ -36,6 +36,7 @@ const Theme = (theme) => ({
     paddingRight: "20px",
   },
   substack: {
+    marginTop: "20px",
     alignItems: "center",
   },
   signUpButton: {
