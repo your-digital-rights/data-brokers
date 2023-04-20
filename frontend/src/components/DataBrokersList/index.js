@@ -13,6 +13,7 @@ import dynamic from 'next/dynamic'
 import tracking from '../../utils/tracking';
 import Image from 'next/image';
 import {DOMAIN_URL} from '../../utils/domain';
+import csvDownload from 'json-to-csv-export'
 
 const DataBrokersDB = ({ classes, dataBrokers }) => {
   const DataBrokerContext = React.createContext({
@@ -83,7 +84,28 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     today = dd + '-' + mm + '-' + yyyy;
     var fileName = "data-brokers-" + today + ".csv";
     _paq.push(['trackLink', DOMAIN_URL, 'download']);
-    gridRef.current.api.exportDataAsCsv({fileName: fileName});
+    csvDownload({
+      data: dataBrokers,
+      filename: fileName,
+      delimiter: ',',
+      headers: [
+        'Domain','Emails','Company Name','Privacy Policy URL','Credit Bureau','Phone Numbers','Address','Health',
+        'Company Legal Name','Company Domain','Company Domain Aliases','Company Url','Company Site Phone Numbers',
+        'Company Site Email Addresses','Company Category Sector','Company Category Industry Group',
+        'Company Category Industry','Company Category Sub Industry','Company Category Sic Code',
+        'Company Category Naics Code','Company Tags','Company Description','Company Founded Year','Company Location',
+        'Company Time Zone','Company Utc Offset','Company Geo Street Number','Company Geo Street Name',
+        'Company Geo Sub Premise','Company Geo City','Company Geo Postal Code','Company Geo State',
+        'Company Geo State Code','Company Geo Country','Company Geo Country Code','Company Geo Lat','Company Geo Lng',
+        'Company Logo','Company Facebook Handle','Company Linkedin Handle','Company Twitter Handle',
+        'Company Twitter Id','Company Twitter Bio','Company Twitter Followers','Company Twitter Following',
+        'Company Twitter Location','Company Twitter Site','Company Twitter Avatar','Company Crunchbase Handle',
+        'Company Type','Company Ticker','Company Identifiers Us Ein','Company Phone','Company Metrics Alexa Us Rank',
+        'Company Metrics Alexa Global Rank','Company Metrics Employees','Company Metrics Employees Range',
+        'Company Metrics Market Cap','Company Metrics Raised','Company Metrics Annual Revenue',
+        'Company Metrics Estimated Annual Revenue','Company Metrics Fiscal Year End','Company Tech',
+        'Company Parent Domain','YDR URL']
+    })
   }
 
   const onQuickFilterChanged = () => {
@@ -171,16 +193,18 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
               <AgGridColumn field="YDR URL" headerName="Opt-out" cellRenderer="optOutCellRenderer" minWidth={95} maxWidth={100} ></AgGridColumn>
             </AgGridReact>                     
           </div>
-          <Button
-            onClick={onExportButtonClick}
-            variant="contained"
-            color="secondary"
-            type="submit"
-            className={classes.exportBtn}
-            id="ExportBtn"
-          >
-            Download The List
-          </Button>
+          { dataBrokers && (
+            <Button
+              onClick={onExportButtonClick}
+              variant="contained"
+              color="secondary"
+              type="submit"
+              className={classes.exportBtn}
+              id="ExportBtn"
+            >
+              Download The List
+            </Button>
+          )}
         </div>                 
       </Paper>
       <div className={classes.license}>
