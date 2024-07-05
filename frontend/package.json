@@ -19,7 +19,7 @@
     "@formatjs/intl-getcanonicallocales": "^1.3.2",
     "@formatjs/intl-numberformat": "^5.4.1",
     "@formatjs/intl-pluralrules": "^3.4.0",
-    "@formatjs/intl-relativetimeformat": "^7.1.1",
+    "@formatjs/intl-relativetimeformat": "^11.2.14",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
