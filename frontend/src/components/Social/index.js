@@ -1,7 +1,6 @@
 import { FormattedMessage, injectIntl } from "react-intl";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Fab from '@material-ui/core/Fab';
 import mailtoLink from "mailto-link";
 import {
   FacebookShareButton,

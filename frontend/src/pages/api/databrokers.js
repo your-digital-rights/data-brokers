@@ -62,7 +62,7 @@ async function fetchDataBrokers() {
 
 setInterval(() => {
   data = fetchDataBrokers();
-}, 60 * 60 * 1000); 
+}, 60 * 60 * 24 * 1000); 
 
 export default async (req, res) => {
   const query = url.parse(req.url,true).query;

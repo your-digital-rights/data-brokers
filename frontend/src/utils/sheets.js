@@ -1,4 +1,4 @@
-import fetch from "universal-fetch";
+import fetch from "isomorphic-fetch";
 import {API_DOMAIN_URL} from "./domain";
 
 var data = null;
