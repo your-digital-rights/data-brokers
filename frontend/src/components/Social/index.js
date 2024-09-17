@@ -134,6 +134,9 @@ const styles = (theme) => ({
     marginLeft: "3px",
   },
 
+  ssBtn: {
+    marginRight: "20px",
+  },
 });
 
 const Social = ({
@@ -204,7 +207,7 @@ const Social = ({
           "https://yourdigitalrights.org/?pk_campaign=siteshare&pk_kwd=facebook&pk_source=" +
           sourcePage
         }
-        className="ss-btn"
+        className={classes.ssBtn}
         quote={facebookQuote}
       >
         <img src="/images/sh/fb.svg" />
@@ -216,7 +219,7 @@ const Social = ({
           "https://yourdigitalrights.org/?pk_campaign=siteshare&pk_kwd=linkedin&pk_source=" +
           sourcePage
         }
-        className="ss-btn"
+        className={classes.ssBtn}
       >
         <img src="/images/sh/lin.svg" />
       </LinkedinShareButton>
@@ -234,14 +237,14 @@ const Social = ({
           "SurveillanceCapitalism",
           "Privacy",
         ]}
-        className="ss-btn"
+        className={classes.ssBtn}
       >
         <img src="/images/sh/tw.svg" />
       </TwitterShareButton>
       <a
         href={emailLink}
         onClick={handleEmailClick}
-        className="ss-btn SocialMediaShareButton--email"
+        className="SocialMediaShareButton--email"
       >
         <img src="/images/sh/mail.svg" />
       </a>
