@@ -3,11 +3,6 @@ import styles from "./styles";
 import { withStyles } from "@material-ui/core/styles";
 import tracking from "../../utils/tracking";
 import { FormattedMessage } from "react-intl";
-import Script from 'next/script'
-
-const handleSignUpClick = (e) => {
-  e.preventDefault();
-}
 
 const Subscribe = ({ classes, children, page="thank-you"}) => {
   const trackSubscribe = () => {
@@ -23,7 +18,6 @@ const Subscribe = ({ classes, children, page="thank-you"}) => {
               color="inherit" 
               variant="h3"
               component="h3"
-              className={classes.intro}
               gutterBottom={true}
             >
               <FormattedMessage id="subscribe.title" defaultMessage="Subscribe To Privacy Alerts!" />
@@ -41,7 +35,7 @@ const Subscribe = ({ classes, children, page="thank-you"}) => {
             </Typography> 
           </div>
           <div className={classes.substack}>
-            <iframe src="https://consciousdigital.substack.com/embed" width="350" height="100" frameborder="0" ></iframe>
+          <iframe src="https://newsletter.yourdigitalrights.org/embed" width="350" height="150" frameborder="0" scrolling="no"></iframe>
           </div>    
         </div>
       </div>
