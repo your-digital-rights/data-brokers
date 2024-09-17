@@ -153,7 +153,7 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
   return (
     <div className={classes.container}>
       <Paper className={classes.inner}>
-        
+        <Map dataBrokers={dataBrokers} selectedDataBroker={selectedDataBroker} />
         <div className={classes.database}>
           <Paper className={classes.searchRoot} id="grid-wrapper" elevation={1}>
             <SearchIcon />

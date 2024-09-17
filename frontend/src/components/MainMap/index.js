@@ -3,9 +3,9 @@ import { MapContainer, Marker, Popup, TileLayer, useMap} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Style as styles } from "./styles";
 import { withStyles } from "@material-ui/core/styles";
-import MarkerClusterGroup from 'react-leaflet-markercluster';
+import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import 'react-leaflet-markercluster/dist/styles.min.css';
+import '@changey/react-leaflet-markercluster/dist/styles.min.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
 import Typography from "@material-ui/core/Typography";
