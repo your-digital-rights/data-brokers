@@ -34,10 +34,8 @@ const Map = (props) => {
 };
 
 const DataBrokersGroup = ({dataBrokers, classes, selectedDataBroker}) => {
-	const map = useMap();
 	const groupRef = React.useRef(null);
 	const dataBrokersWithLocation = dataBrokers.filter((dataBroker) => dataBroker.latlng && dataBroker.latlng.length > 0);
-
 	const [markers, setMarkers] = React.useState({})
 
 	const markersRef = React.useCallback((dataBroker, marker) => {
