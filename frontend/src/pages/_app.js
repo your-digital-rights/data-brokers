@@ -9,8 +9,8 @@ import { useRouter } from "next/router"
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 import * as locales from "../../compiled-lang";
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-material.css';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
