@@ -131,7 +131,7 @@ const Brokers = ({ classes, router }) => {
                 {dataBrokers.map((company) => (
                   <Grid key={company.domain} item>
                     <Paper className={classes.paper} elevation={2} >
-                      <Link href={"https://yourdigitalrights.org/d/" + company.domain} passHref> 
+                      <Link legacyBehavior href={"https://yourdigitalrights.org/d/" + company.domain} passHref> 
                         <GridListTile
                           component="a"
                           target="_blank"

@@ -22,7 +22,7 @@ const NavItem = ({
 }) => {
   return (
     <li className={classes.item} onClick={onClickHandler}>
-      <Link href={href} className={classes.link} passHref>
+      <Link legacyBehavior href={href} className={classes.link} passHref>
         <Typography
           component="a"
           target={target}
