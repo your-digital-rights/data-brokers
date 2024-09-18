@@ -13,6 +13,7 @@
     "compile:i18n": "formatjs compile-folder --ast --format crowdin lang compiled-lang"
   },
   "dependencies": {
+    "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@datapunt/matomo-tracker-react": "^0.5.1",
     "@formatjs/cli": "^2.7.3",
     "@formatjs/intl-datetimeformat": "^2.4.3",
@@ -38,7 +39,7 @@
     "leaflet.markercluster": "^1.5.3",
     "mailgo": "^0.12.2",
     "mailto-link": "^2.0.0",
-    "next": "^14.2.11",
+    "next": "^14.2.12",
     "next-seo": "^6.6.0",
     "node-gyp": "^6.1.0",
     "prop-types": "^15.7.2",
@@ -48,7 +49,6 @@
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.8",
     "react-leaflet": "^4.2.1",
-    "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "react-share": "^4.4.1",
     "sitemap": "^6.4.0",
     "universal-fetch": "^1.0.0"
