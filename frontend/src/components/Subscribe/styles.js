@@ -4,12 +4,12 @@ import { theme } from "../../styles/theme";
 const Theme = (theme) => ({
   heading: {
     color: "white",
-    padding: "25px 20px",
+    padding: "25px 8% 20px",
     backgroundColor: "#039277",
     borderRadius: "20px",
     maxWidth: "980px !important",
-    margin: "30px",
-    [theme.breakpoints.down("sm")]: {
+    margin: "30px 30px 60px",
+    [theme.breakpoints.down('md')]: {
       display: "inherit",
       margin: "auto 10px",
     },
@@ -19,13 +19,13 @@ const Theme = (theme) => ({
     boxSizing: "border-box",
     textAlign: "center",
     ...container,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "0px",
       paddingRight: "0px",
     }
   },
   image: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       display: "none",
     },
   },
@@ -37,10 +37,22 @@ const Theme = (theme) => ({
   },
   substack: {
     marginTop: "20px",
+    justifyContent: "center",
     alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
+  },
+  error: {
+    color: "black",
+  }, 
+  success: {
+    color: "black",
   },
   signUpButton: {
     marginTop: "20px",
+  },
+  intro: {
+    marginBottom: "20px",
   }
 });
 
