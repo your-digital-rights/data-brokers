@@ -113,7 +113,7 @@ const Footer = ({ classes }) => {
               id="footer.privacyPolicy"
               defaultMessage="<a>Privacy Policy</a>"
               values={{
-                a: txt=> (<Link href="/privacy" ><a className={classes.DisclaimerLink}>{txt}</a></Link>)
+                a: txt=> (<Link legacyBehavior href="/privacy" ><a className={classes.DisclaimerLink}>{txt}</a></Link>)
               }}
             />
           </Typography>
@@ -122,7 +122,7 @@ const Footer = ({ classes }) => {
               id="footer.mission"
               defaultMessage="<a>Mission</a>"
               values={{
-                a: txt=> (<Link href="/about" ><a className={classes.DisclaimerLink}>{txt}</a></Link>)
+                a: txt=> (<Link legacyBehavior href="/about" ><a className={classes.DisclaimerLink}>{txt}</a></Link>)
               }}
             />
           </Typography> 
