@@ -38,8 +38,8 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
       <>
       <Image 
         className={classes.orgLogo} 
-        width='20px' 
-        height='20px' 
+        width='20' 
+        height='20' 
         src={src} 
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMU3NlZz0AEYBxVSF+FAOEUEj9NKjNZAAAAAElFTkSuQmCC"
@@ -143,12 +143,12 @@ const DataBrokersDB = ({ classes, dataBrokers }) => {
     setSelectedDataBroker(e.data); 
   };
 
-  const Map = dynamic(
-    () => import("../MainMap"), 
+  const Map = React.useMemo(() => dynamic(
+    () => import('../MainMap'), // replace '@components/map' with your component's location
     { 
-      ssr: false 
-    } // This line is important. It's what prevents server-side render
-  );
+      ssr: false // This line is important. It's what prevents server-side render
+    }
+  ), [selectedDataBroker])
   
   return (
     <div className={classes.container}>
