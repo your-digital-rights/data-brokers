@@ -23,7 +23,7 @@
     "@formatjs/intl-relativetimeformat": "^11.2.14",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
